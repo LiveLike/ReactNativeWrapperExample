@@ -7,15 +7,40 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.ChatFragment">
 
+    <LinearLayout
+        android:id="@+id/custom_chat_message_send_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:weightSum="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/url_input"
+            android:layout_width="0dp"
+            android:layout_weight="0.75"
+            android:layout_height="wrap_content"
+            android:hint="video url"></com.google.android.material.textfield.TextInputEditText>
+
+        <Button
+            android:id="@+id/custom_chat_message_send_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:text="Send" />
+    </LinearLayout>
+
     <com.livelike.engagementsdk.chat.ChatView
         android:id="@+id/chat_view"
+        style="@style/CustomChatTheme"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:displayUserProfile="true"
-        style="@style/CustomChatTheme"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/custom_chat_message_send_container" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

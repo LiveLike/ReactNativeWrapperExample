@@ -6,12 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
 import com.livelike.demo.R
+import com.livelike.demo.databinding.ChatFragmentLayoutBinding
 import com.livelike.engagementsdk.EngagementSDK
 import com.livelike.engagementsdk.EpochTime
 import com.livelike.engagementsdk.chat.ChatView
+import com.livelike.engagementsdk.chat.ChatViewDelegate
+import com.livelike.engagementsdk.chat.ChatViewThemeAttributes
+import com.livelike.engagementsdk.publicapis.ChatMessageType
 import com.livelike.engagementsdk.publicapis.ErrorDelegate
 import com.livelike.engagementsdk.publicapis.LiveLikeCallback
+import com.livelike.engagementsdk.publicapis.LiveLikeChatMessage
+import org.json.JSONObject
 
 /**
  * A placeholder fragment containing a simple view.
@@ -21,13 +28,15 @@ class ChatFragment : BaseFragment() {
     private lateinit var pageViewModel: PageViewModel
     private var programId = ""
     private var isChatInputVisible = true
-    var chat_view : ChatView? = null
+    private var _binding : ChatFragmentLayoutBinding? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         pageViewModel = ViewModelProvider(requireActivity()).get(PageViewModel::class.java)
-        setProgramId(arguments?.getString(ARG_SECTION_NUMBER) ?: "3ebd6f09-2f16-4171-b94a-c9335154d672")
+        setProgramId(arguments?.getString(ARG_SECTION_NUMBER) ?: "fbfd021c-a4ea-4088-9a07-568f7c947e33")
         //setProgramId("3ebd6f09-2f16-4171-b94a-c9335154d672")
         isChatInputVisible = true//arguments?.getBoolean(ARG_CHAT_INPUT_VISIBILITY) ?: false
+
     }
 
     private fun setProgramId(programId: String) {
@@ -39,10 +48,10 @@ class ChatFragment : BaseFragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.chat_fragment_layout, container, false)
-        val chatView: ChatView = root.findViewById(R.id.chat_view)
+        _binding = ChatFragmentLayoutBinding.bind(inflater.inflate(R.layout.chat_fragment_layout, container, false))
+        val chatView: ChatView = _binding!!.root.findViewById(R.id.chat_view)
         initChatSession(chatView)
-        return root
+        return _binding!!.root
     }
 
     private fun initChatSession(chat_view: ChatView) {
@@ -67,14 +76,62 @@ class ChatFragment : BaseFragment() {
                 }
             })
             chat_view.allowMediaFromKeyboard = true
-            chat_view.isChatInputVisible = true
+            chat_view.isChatInputVisible = false
             chat_view.setSession(chatSession)
-            //chat_view.clearSession()
-            this.chat_view = chat_view
-            //chatSession.close()
+
+            chatSession.avatarUrl
+            _binding?.customChatMessageSendBtn?.setOnClickListener {
+                val url = _binding?.urlInput?.text
+                url?.let {
+                    chatSession?.sendCustomChatMessage("{" +
+                            "\"custom_message\": \""+url+"\"" +
+                            "}", object : LiveLikeCallback<LiveLikeChatMessage>() {
+                        override fun onResponse(result: LiveLikeChatMessage?, error: String?) {
+                            result?.let {
+                                println("ExoPlayerActivity.onResponse> ${it.id}")
+                            }
+                            error?.let {
+                                //Toast.makeText(applicationContext, error, Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                    })
+                }
+
+            }
+            chat_view.chatViewDelegate = object : ChatViewDelegate {
+                override fun onCreateViewHolder(
+                    parent: ViewGroup,
+                    viewType: ChatMessageType
+                ): RecyclerView.ViewHolder {
+                    return MyCustomMsgViewHolder(VideoView(parent.context))
+                }
+
+                override fun onBindViewHolder(
+                    holder: RecyclerView.ViewHolder,
+                    liveLikeChatMessage: LiveLikeChatMessage,
+                    chatViewThemeAttributes: ChatViewThemeAttributes,
+                    showChatAvatar: Boolean
+                ) {
+                    println("ExoPlayerActivity.onBindView>> ${holder is MyCustomMsgViewHolder}")
+                    chatViewThemeAttributes.chatBubbleBackgroundRes?.let {
+                        val jsonObject = JSONObject(liveLikeChatMessage.custom_data)
+                        val url= jsonObject.get("custom_message").toString()
+                        (holder as MyCustomMsgViewHolder).videoUrl = url
+                    }
+                }
+            }
+
+            //this.chat_view = chat_view
         }
     }
 
+    class MyCustomMsgViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var videoUrl: String? = null
+        set(value) {
+            field = value
+            (itemView as VideoView).videoUrl = value
+        }
+    }
 
     companion object {
         /**
