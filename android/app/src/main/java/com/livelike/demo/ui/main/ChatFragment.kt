@@ -103,7 +103,21 @@ class ChatFragment : BaseFragment() {
                 callback = object : LiveLikeCallback<Unit>() {
                     override fun onResponse(result: Unit?, error: String?) {
                         if (result != null) {
+                            pageViewModel.engagementSDK.chat().getPinMessageInfoList(
+                                programId!!,
+                                LiveLikeOrdering.ASC,
+                                LiveLikePagination.FIRST,
+                                object : LiveLikeCallback<List<PinMessageInfo>>() {
+                                    override fun onResponse(
+                                        result: List<PinMessageInfo>?,
+                                        error: String?
+                                    ) {
+                                        result?.let {
+                                            pinMessageAdapter.updateData(it as ArrayList<PinMessageInfo>)
 
+                                        }
+                                    }
+                                })
                         }
                     }
                 })
@@ -111,22 +125,7 @@ class ChatFragment : BaseFragment() {
             chat_view.isChatInputVisible = true
             chat_view.setSession(chatSession)
 
-            chatSession.avatarUrl = "https://www.gstatic.com/webp/gallery/1.jpg"
-            pageViewModel.engagementSDK.chat().getPinMessageInfoList(
-                programId!!,
-                LiveLikeOrdering.ASC,
-                LiveLikePagination.FIRST,
-                object : LiveLikeCallback<List<PinMessageInfo>>() {
-                    override fun onResponse(
-                        result: List<PinMessageInfo>?,
-                        error: String?
-                    ) {
-                        result?.let {
-                            pinMessageAdapter.updateData(it as ArrayList<PinMessageInfo>)
 
-                        }
-                    }
-                })
 
             chatSession.setMessageListener(object : MessageListener {
                 override fun onDeleteMessage(messageId: String) {
