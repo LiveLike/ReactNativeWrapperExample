@@ -9,28 +9,45 @@
 
     <LinearLayout
         android:id="@+id/custom_chat_message_send_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginTop="30dp"
         android:weightSum="1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/url_input"
-            android:layout_width="0dp"
-            android:layout_weight="0.75"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="video url"></com.google.android.material.textfield.TextInputEditText>
+            android:orientation="horizontal"
+            android:weightSum="1">
 
-        <Button
-            android:id="@+id/custom_chat_message_send_btn"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.25"
-            android:text="Send" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/url_input"
+                android:layout_width="0dp"
+                android:layout_weight="0.75"
+                android:layout_height="wrap_content"
+                android:hint="video url"></com.google.android.material.textfield.TextInputEditText>
+
+            <Button
+                android:id="@+id/custom_chat_message_send_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25"
+                android:text="Send" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/pinned_message_list"
+            android:layout_width="match_parent"
+            android:background="@color/colorGray"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_height="match_parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
+
 
     <com.livelike.engagementsdk.chat.ChatView
         android:id="@+id/chat_view"

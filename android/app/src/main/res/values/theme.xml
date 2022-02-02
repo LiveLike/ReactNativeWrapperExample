@@ -15,6 +15,7 @@
         <item name="chatInputViewBackground">#1E2028
         </item><!-- update the background of ChatInput, it can be drawable/color -->
 
+        <item name="chatBackgroundWidth">wrap_content</item>
         <item name="chatDisplayBackground">#1E2028
         </item><!-- update the background of Chat List, it can be drawable/color  -->
         <item name="chatViewBackground">#1E2028
