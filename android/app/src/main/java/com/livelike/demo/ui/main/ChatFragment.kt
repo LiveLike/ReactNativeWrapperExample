@@ -111,6 +111,7 @@ class ChatFragment : BaseFragment() {
             chat_view.isChatInputVisible = true
             chat_view.setSession(chatSession)
 
+            chatSession.avatarUrl = "https://www.gstatic.com/webp/gallery/1.jpg"
             pageViewModel.engagementSDK.chat().getPinMessageInfoList(
                 programId!!,
                 LiveLikeOrdering.ASC,
@@ -190,20 +191,14 @@ class ChatFragment : BaseFragment() {
                     chatViewThemeAttributes.apply {
                         (holder.itemView as VideoView)._binding?.let {
 
-                            if (true) {
-                                it.chatNickname.setTextColor(chatNickNameColor)
-                                it.chatNickname.text =
-                                    liveLikeChatMessage.nickname
-                            } else {
-                                it.chatNickname.setTextColor(chatOtherNickNameColor)
-                                it.chatNickname.text = liveLikeChatMessage.nickname
-                            }
+
+                            it.chatNickname.setTextColor(chatOtherNickNameColor)
+                            it.chatNickname.text = liveLikeChatMessage.nickname
                             it.chatNickname.setTextSize(
                                 TypedValue.COMPLEX_UNIT_PX,
                                 chatUserNameTextSize
                             )
                             it.chatNickname.isAllCaps = chatUserNameTextAllCaps
-
 
                             val layoutParam =
                                 it.chatBackground!!.layoutParams as ConstraintLayout.LayoutParams
@@ -260,17 +255,18 @@ class ChatFragment : BaseFragment() {
                                     RoundedCorners(chatAvatarRadius)
                                 )
                             }
+
                             if (liveLikeChatMessage.userPic.isNullOrEmpty()) {
                                 // load local image
                                 Glide.with(holder.itemView.context.applicationContext)
                                     .load(R.drawable.default_avatar)
-                                    //.apply(options)
+                                    .apply(options)
                                     .placeholder(chatUserPicDrawable)
                                     .into(it.imgChatAvatar)
                             } else {
                                 Glide.with(holder.itemView.context.applicationContext)
-                                    .load("https://www.gstatic.com/webp/gallery/1.jpg")
-                                    //.apply(options)
+                                    .load(liveLikeChatMessage.userPic.isNullOrEmpty())
+                                    .apply(options)
                                     .placeholder(chatUserPicDrawable)
                                     .error(chatUserPicDrawable)
                                     .into(it.imgChatAvatar)

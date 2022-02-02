@@ -46,7 +46,7 @@
         </item> <!-- circle the user display image in the chat message -->
         <!-- update the size of user display image -->
         <item name="chatAvatarHeight">36dp</item>
-        <item name="chatAvatarWidth">32dp</item>
+        <item name="chatAvatarWidth">36dp</item>
         <!-- update the size of user display image -->
         <item name="chatAvatarGravity">top
         </item> <!-- update the gravity position of the user avatar -->
@@ -118,7 +118,7 @@
         </item><!-- update the radius of the selected reaction in the reaction popup -->
         <item name="chatStickerSendDrawable">@drawable/ic_chat_emoji_ios_category_smileysandpeople
         </item>
-        <item name="chatAvatarRadius">15dp</item><!--update the radius of the chat avatar -->
+        <item name="chatAvatarRadius">20dp</item><!--update the radius of the chat avatar -->
         <item name="rankValueTextColor">@color/white
         </item><!-- update the text color of the rank show in the chat view -->
         <item name="reaction_icons_margin_top">15dp
