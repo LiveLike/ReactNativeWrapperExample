@@ -73,7 +73,7 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/widgetContainer"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="200dp"
                         android:animateLayoutChanges="@bool/livelike_widget_component_layout_transition_enabled"
                         android:background="@drawable/video_alert_rounded_corner_black_background">
 
@@ -89,10 +89,11 @@
 
                         <VideoView
                             android:id="@+id/playerView"
-                            android:layout_width="fill_parent"
+                            android:layout_width="match_parent"
                             android:layout_height="200dp"
                             android:background="@drawable/video_view_background"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 

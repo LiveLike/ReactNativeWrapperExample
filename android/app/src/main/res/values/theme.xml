@@ -15,7 +15,6 @@
         <item name="chatInputViewBackground">#1E2028
         </item><!-- update the background of ChatInput, it can be drawable/color -->
 
-        <item name="chatBackgroundWidth">wrap_content</item>
         <item name="chatDisplayBackground">#1E2028
         </item><!-- update the background of Chat List, it can be drawable/color  -->
         <item name="chatViewBackground">#1E2028
@@ -31,8 +30,8 @@
         <item name="chatMarginRight">0dp</item>
         <!--update the margin for chat box -->
         <!-- update the position of ChatReactionView -->
-        <item name="chatReactionXPosition">120dp</item>
-        <item name="chatReactionYPosition">25dp</item>
+        <item name="chatReactionXPosition">40dp</item>
+        <item name="chatReactionYPosition">-5dp</item>
         <!-- update the position of ChatReactionView -->
         <item name="chatReactionElevation">6dp
         </item><!-- update the elevation of chat reaction (CardView) -->
@@ -121,7 +120,7 @@
         <item name="chatAvatarRadius">20dp</item><!--update the radius of the chat avatar -->
         <item name="rankValueTextColor">@color/white
         </item><!-- update the text color of the rank show in the chat view -->
-        <item name="reaction_icons_margin_top">15dp
+        <item name="reaction_icons_margin_top">4dp
         </item><!-- margins of reaction icons shown at top-right of the message box by default -->
         <item name="reaction_icons_margin_bottom">10dp</item>
         <item name="reaction_icon_position_bottom">true</item>
@@ -158,7 +157,7 @@
         </item><!-- to set the textstyle of the reaction count of the message -->
         <item name="chatReactionDisplaySize">16dp
         </item><!-- to update the size of the reaction icons -->
-        <item name="chatReactionPanelGravity">right|bottom
+        <item name="chatReactionPanelGravity">left|bottom
         </item><!-- to set the gravity of the reaction panel w.r.t the message box -->
         <item name="chatReactionPanelCountCustomFontPath">fonts/RingsideExtraWide-Black.otf
         </item><!-- to set the font of count shown in reaction panel for every reaction -->
@@ -171,7 +170,7 @@
         <item name="chatUserNameTextLetterSpacing">0.0
         </item><!--set the letter spacing of chat username -->
 
-        <!-- <item name="chatReactionMessageBubbleHighlightedBackground">@color/teal_200</item>  update the color of message bubble on selected-->
+        <item name="chatReactionMessageBubbleHighlightedBackground">@drawable/chat_bubble_background</item>
         <!-- update the padding of the chat bubble -->
 
         <!-- update the padding of send button -->

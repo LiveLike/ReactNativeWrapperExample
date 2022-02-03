@@ -18,6 +18,7 @@
   <color name="default_track_color">#c3a9a9a9</color>
   <color name="green">#00FF00</color>
   <color name="red">#FF0000</color>
+  <color name="livelike_chat_reaction_selected_background_color">#33000000</color>
   <color name="livelike_header_text_color">#FFFFFF</color>
   <color name="livelike_default_text_color">#FFFFFF</color>
   <color name="light_blue_600">#FF039BE5</color>
