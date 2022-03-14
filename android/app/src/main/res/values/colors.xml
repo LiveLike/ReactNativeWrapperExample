@@ -28,6 +28,24 @@
   <color name="livelike_poll_background_color">#213335</color>
   <color name="livelike_prediction_background_color">#213335</color>
   <color name="livelike_quiz_background_color">#213335</color>
+  <color name="livelike_chat_reaction_selected_background_color">#f0f0f0</color>
+  <color name="ask_a_widget_active_input">#ff5000</color>
+  <color name="ask_a_widget_in_active_input">#dcdee4</color>
+  <color name="otherUsernameColor">#121212</color>
+  <color name="messageColor">#121212</color>        <!-- update color of message in chat message -->
+  <color name="livelike_video_alert_volume_background_color">#000000</color>
+  <color name="chatBubbleBackgroundColor">#f6fbff</color>
+  <color name="livelike_default_chat_cell_video_title">#1c2c55</color>
+  <color name="fcAskWidgetTitleTextColor">#000000</color>
+  <color name="fcAskWidgetInputTextColor">#000000</color>
+  <color name="fcAskWidgetInputHintTextColor">#787878</color>
+  <color name="fcAskWidgetWordCountTextColor">#787878</color>
+  <color name="fcAskWidgetSendBtnTextColor">#ffffff</color>
+  <color name="fcAskWidgetConfirmationMsgTextColor">#000000</color>
+  <color name="fcVideoMessageNickNameTextColor">#121212</color>
+  <color name="fcVideoMessageAskInfluencerTextColor">#ff5000</color>
+
+  787878
   <array name="default_index_gradient">
     <item>@color/green</item>
     <item>@color/red</item>
