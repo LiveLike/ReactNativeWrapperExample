@@ -96,8 +96,8 @@ class LiveLikeChatViewManager(val applicationContext: ReactApplicationContext) :
         val gson = Gson()
         var fcReactData: FCReactData? = gson.fromJson(data, FCReactData::class.java)
         fcReactData?.let {
-            val chatSession = LiveLikeManager.getChatSession(it.programId)
-            view.updateChatSession(chatSession)
+            val contentSession = LiveLikeManager.getContentSession(it.programId)
+            view.updateContentSession(contentSession)
             onConfiguration(view, it.chatRoomId)
         }
     }
@@ -120,7 +120,9 @@ class LiveLikeChatViewManager(val applicationContext: ReactApplicationContext) :
 
     private fun onConfiguration(chatView: LiveLikeChatWidgetView, chatRoomId: String) {
         if (isChatConfigurable(chatView)) {
-            chatView.setupChat(chatRoomId)
+            chatView.setUpWidgetView()
+            //chatView.setupChat(chatRoomId)
+            chatView.setUpTimelineView()
             this.registerPinnedMessageHandler(chatView, chatRoomId)
         }
     }

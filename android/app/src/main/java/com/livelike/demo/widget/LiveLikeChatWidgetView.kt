@@ -11,6 +11,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
@@ -19,10 +21,12 @@ import com.bumptech.glide.request.RequestOptions
 import com.facebook.react.bridge.*
 import com.facebook.react.uimanager.ThemedReactContext
 import com.facebook.react.uimanager.events.RCTEventEmitter
+import com.livelike.demo.LiveLikeManager
 import com.livelike.demo.R
 import com.livelike.demo.adapters.PinMessageAdapter
 import com.livelike.demo.databinding.FcChatViewBinding
 import com.livelike.demo.ui.main.FCVideoView
+import com.livelike.engagementsdk.LiveLikeContentSession
 import com.livelike.engagementsdk.MessageListener
 import com.livelike.engagementsdk.chat.ChatView
 import com.livelike.engagementsdk.chat.ChatViewDelegate
@@ -32,6 +36,8 @@ import com.livelike.engagementsdk.chat.data.remote.PinMessageInfo
 import com.livelike.engagementsdk.publicapis.ChatMessageType
 import com.livelike.engagementsdk.publicapis.LiveLikeCallback
 import com.livelike.engagementsdk.publicapis.LiveLikeChatMessage
+import com.livelike.engagementsdk.widget.timeline.WidgetTimeLineViewModel
+import com.livelike.engagementsdk.widget.timeline.WidgetsTimeLineView
 import org.json.JSONObject
 
 
@@ -45,6 +51,7 @@ class LiveLikeChatWidgetView(
     private var chatViewBinding: FcChatViewBinding? = null
     var fallback: Choreographer.FrameCallback;
     var chatSession: LiveLikeChatSession? = null
+    var contentSession: LiveLikeContentSession? = null
     var userAvatarUrl = ""
     private var pinMessageAdapter = PinMessageAdapter()
     var influencerNickName: String? = null
@@ -94,7 +101,7 @@ class LiveLikeChatWidgetView(
 
     override fun onHostDestroy() {}
 
-    fun updateChatSession(chatSession: LiveLikeChatSession?) {
+    private fun updateChatSession(chatSession: LiveLikeChatSession?) {
         this.chatSession = chatSession
         this.chatSession?.allowDiscardOwnPublishedMessageInSubscription = false
     }
@@ -393,6 +400,38 @@ class LiveLikeChatWidgetView(
             chatSession = null
             pinMessageAdapter.clear()
         }
+    }
+
+    fun updateContentSession(contentSession: LiveLikeContentSession?) {
+        this.contentSession = contentSession
+        updateChatSession(contentSession?.chatSession)
+    }
+
+    fun setUpWidgetView() {
+        this.contentSession?.let { this.chatViewBinding?.widgetView?.setSession(it) }
+    }
+
+    fun setUpTimelineView() {
+        var timeLineViewModel: WidgetTimeLineViewModel
+        this.contentSession.let {
+            timeLineViewModel = WidgetTimeLineViewModel(it!!)
+
+            val timeLineView = WidgetsTimeLineView(
+                context,
+                timeLineViewModel,
+                sdk = LiveLikeManager.engagementSDK
+            )
+
+            timeLineView.setSeparator(
+                ContextCompat.getDrawable(
+                    context,
+                    R.drawable.white_separator
+                )
+            )
+            chatViewBinding?.timelineViewContainer?.addView(timeLineView)
+
+        }
+
     }
 
 
