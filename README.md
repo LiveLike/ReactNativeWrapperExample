@@ -21,7 +21,14 @@ Install dependencies
 
 Run on iOS
 
+Install Pod depenencies
 ```bash
+cd iOS
+pod install
+```
+
+```bash
+  cd..
   npm run iOS
 ```
 
