@@ -98,3 +98,9 @@ node_modules/
 package.json
 yarn.lock
 android/.idea/gradle.xml
+node_modules
+ios/Pods/
+ios/Pods/boost-for-react-native/README.md
+ios/Podfile.lock
+android/.idea/gradle.xml
+ios/Podfile.lock

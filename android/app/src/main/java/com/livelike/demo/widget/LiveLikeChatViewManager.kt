@@ -121,8 +121,8 @@ class LiveLikeChatViewManager(val applicationContext: ReactApplicationContext) :
     private fun onConfiguration(chatView: LiveLikeChatWidgetView, chatRoomId: String) {
         if (isChatConfigurable(chatView)) {
             chatView.setUpWidgetView()
-            //chatView.setupChat(chatRoomId)
-            chatView.setUpTimelineView()
+            chatView.setupChat(chatRoomId)
+            //chatView.setUpTimelineView()
             this.registerPinnedMessageHandler(chatView, chatRoomId)
         }
     }

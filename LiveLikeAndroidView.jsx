@@ -4,7 +4,8 @@ import {findNodeHandle, NativeModules, requireNativeComponent, UIManager} from '
 export const LiveLikeChatWidgetView = requireNativeComponent('LiveLikeChatWidgetView');
 export const LiveLikeWidgetView = requireNativeComponent('LiveLikeWidgetView');
 
-const clientId = "OPba08mrr8gLZ2UMQ3uWMBOLiGhfovgIeQAEfqgI"
+const clientId = "mOBYul18quffrBDuq2IACKtVuLbUzXIPye5S3bq5"
+
 
 
 // ClientID = BJSFlQAxraN9F99EcVOzpva7G8ohtJdGKpRdx3Ml
@@ -17,8 +18,8 @@ const clientId = "OPba08mrr8gLZ2UMQ3uWMBOLiGhfovgIeQAEfqgI"
 
 
 // Messages + Pinned Video
-const programId = "5337f725-f580-49b5-9697-822f69e6d16e"
-const chatRoomId = "1ad3b3ae-c25f-4f3b-8873-727b1bf7ebbb"
+const programId = "71add52f-dd99-42ac-8e96-743aaad41c3b"
+const chatRoomId = "3b097ea8-2b74-42b7-a810-5853b9796e00"
 // // https://cf-blast.livelikecdn.com/producer/applications/BJSFlQAxraN9F99EcVOzpva7G8ohtJdGKpRdx3Ml/chat-rooms/1ad3b3ae-c25f-4f3b-8873-727b1bf7ebbb/pinned-messages
 
 

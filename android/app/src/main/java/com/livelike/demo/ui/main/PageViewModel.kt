@@ -25,8 +25,8 @@ class PageViewModel : ViewModel() {
     lateinit var contentSession: LiveLikeContentSession
     val widgetJsonData: MutableLiveData<String> = MutableLiveData()
     val currentUserLeaderBoard: MutableLiveData<LeaderBoardEntry> = MutableLiveData()
-    val clientId = "OPba08mrr8gLZ2UMQ3uWMBOLiGhfovgIeQAEfqgI" // Fancode
-//    val clientId = "mOBYul18quffrBDuq2IACKtVuLbUzXIPye5S3bq5"
+    //val clientId = "OPba08mrr8gLZ2UMQ3uWMBOLiGhfovgIeQAEfqgI" // Fancode
+    val clientId = "mOBYul18quffrBDuq2IACKtVuLbUzXIPye5S3bq5"
 
     fun createContentSession(programId: String?) {
         contentSession = programId?.let { engagementSDK.createContentSession(it) }!!
