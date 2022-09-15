@@ -8,7 +8,6 @@ import com.facebook.react.uimanager.ViewGroupManager
 import com.facebook.react.uimanager.annotations.ReactProp
 import com.google.gson.Gson
 import com.livelike.demo.LiveLikeManager
-import com.livelike.engagementsdk.chat.LiveLikeChatSession
 import com.livelike.engagementsdk.chat.data.remote.LiveLikeOrdering
 import com.livelike.engagementsdk.chat.data.remote.LiveLikePagination
 import com.livelike.engagementsdk.chat.data.remote.PinMessageInfo
@@ -98,7 +97,7 @@ class LiveLikeChatViewManager(val applicationContext: ReactApplicationContext) :
         fcReactData?.let {
             val contentSession = LiveLikeManager.getContentSession(it.programId)
             view.updateContentSession(contentSession)
-            onConfiguration(view, it.chatRoomId)
+            onConfiguration(view, it.chatRoomId, it.widgetId, it.widgetKind)
         }
     }
 
@@ -118,12 +117,17 @@ class LiveLikeChatViewManager(val applicationContext: ReactApplicationContext) :
         view.setInfluencerName(influencerName)
     }
 
-    private fun onConfiguration(chatView: LiveLikeChatWidgetView, chatRoomId: String) {
+    private fun onConfiguration(
+        chatView: LiveLikeChatWidgetView,
+        chatRoomId: String,
+        widgetId: String,
+        widgetType: String
+    ) {
         if (isChatConfigurable(chatView)) {
-            chatView.setUpWidgetView()
-            chatView.setupChat(chatRoomId)
-            //chatView.setUpTimelineView()
-            this.registerPinnedMessageHandler(chatView, chatRoomId)
+            chatView.setUpWidgetView(widgetId,widgetType)
+            //chatView.setupChat(chatRoomId)
+            //chatView.setUpTimelineView(widgetId,widgetType)
+            //this.registerPinnedMessageHandler(chatView, chatRoomId)
         }
     }
 

@@ -27,6 +27,7 @@ import com.livelike.demo.adapters.PinMessageAdapter
 import com.livelike.demo.databinding.FcChatViewBinding
 import com.livelike.demo.ui.main.FCVideoView
 import com.livelike.engagementsdk.LiveLikeContentSession
+import com.livelike.engagementsdk.LiveLikeWidget
 import com.livelike.engagementsdk.MessageListener
 import com.livelike.engagementsdk.chat.ChatView
 import com.livelike.engagementsdk.chat.ChatViewDelegate
@@ -407,8 +408,19 @@ class LiveLikeChatWidgetView(
         updateChatSession(contentSession?.chatSession)
     }
 
-    fun setUpWidgetView() {
-        this.contentSession?.let { this.chatViewBinding?.widgetView?.setSession(it) }
+    fun setUpWidgetView(widgetId: String, widgetType: String) {
+        this.contentSession?.let {
+            LiveLikeManager.engagementSDK.fetchWidgetDetails(widgetId, widgetType, object : LiveLikeCallback<LiveLikeWidget>() {
+                override fun onResponse(livelikeWidget: LiveLikeWidget?, error: String?) {
+                    livelikeWidget?.let {
+                        //widget detail
+                        chatViewBinding?.widgetView?.displayWidget(sdk = LiveLikeManager.engagementSDK, it)
+                    }
+                    error?.let{
+                        //showError(error)//error fetching details
+                    }
+                }})
+        }
     }
 
     fun setUpTimelineView() {
