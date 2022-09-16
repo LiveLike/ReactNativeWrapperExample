@@ -10,6 +10,21 @@ class LiveLikeView: UIView {
     setupEngagementSDK()
   }
   
+  @objc var widgetId = "" {
+    didSet {
+      //Here you can call any function and it will be called after the value get here
+      //separatedVideoViewController.setDataWidget(data:data)
+
+    }
+  }
+  
+  @objc var widgetKind = "" {
+    didSet {
+      //Here you can call any function and it will be called after the value get here
+      //separatedVideoViewController.setDataWidget(data:data)
+    }
+  }
+  
   private func setupEngagementSDK() {
     sdk = EngagementSDK.init(config: EngagementSDKConfig(clientID: "mOBYul18quffrBDuq2IACKtVuLbUzXIPye5S3bq5"))
     EngagementSDK.logLevel = .debug
@@ -26,6 +41,7 @@ class LiveLikeView: UIView {
     } else {
       separatedVideoViewController?.view.frame = bounds
     }
+    separatedVideoViewController?.setWidgetData(widgetId: widgetId, widgetKind: widgetKind)
   }
   
   private func embed() {

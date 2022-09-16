@@ -539,7 +539,7 @@ SPEC CHECKSUMS:
   EXSplashScreen: 6f02bcc84bf6bdc19dcb7ae934b7015a3aaef008
   EXUpdatesInterface: 410cb5349b567b6b15b31eb806b564908d6ec7ad
   FBLazyVector: c71c5917ec0ad2de41d5d06a5855f6d5eda06971
-  FBReactNativeSpec: db5b99eb5a948485f072c430cdb662409796ea01
+  FBReactNativeSpec: cde4bb52d3b7f8e19e95d41381895cfadba43022
   glog: 73c2498ac6884b13ede40eda8228cb1eee9d9d62
   lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
   Mixpanel-swift: 3220daad7d82ff50cf9b8c3e31efed5bad426978

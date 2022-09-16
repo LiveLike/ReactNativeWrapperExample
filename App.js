@@ -9,7 +9,10 @@ export default function App() {
   return (
     <View style={styles.container}>
      {isIOS ? (
-        <LiveLikeiOSView style={styles.wrapper}></LiveLikeiOSView>
+        <LiveLikeiOSView 
+        widgetId="e709bca5-0c62-4a81-9b8c-3f021eaab415"
+        widgetKind="text-quiz"
+        style={styles.wrapper}></LiveLikeiOSView>
       ) : (
         <LiveLikeAndroidView style={styles.wrapper}></LiveLikeAndroidView>
       )}

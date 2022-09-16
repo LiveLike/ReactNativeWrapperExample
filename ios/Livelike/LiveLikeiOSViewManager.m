@@ -7,4 +7,7 @@
 
 #import "React/RCTViewManager.h"
 @interface RCT_EXTERN_MODULE(LiveLikeiOSViewManager, RCTViewManager)
+  RCT_EXPORT_VIEW_PROPERTY(widgetId, NSString)
+  RCT_EXPORT_VIEW_PROPERTY(widgetKind, NSString)
 @end
+

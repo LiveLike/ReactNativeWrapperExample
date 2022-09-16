@@ -14,6 +14,5 @@ class LiveLikeiOSViewManager: RCTViewManager {
   override static func requiresMainQueueSetup() -> Bool {
      return true
    }
- 
- 
+
 }

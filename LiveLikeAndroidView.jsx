@@ -16,11 +16,10 @@ const clientId = "mOBYul18quffrBDuq2IACKtVuLbUzXIPye5S3bq5"
 // const chatRoomId = "bda23d2a-da84-4fc1-bd39-7e9ddba73d71" // TODO: Pinned Message
 // const chatRoomId = "bda23d2a-da84-4fc1-bd39-7e9ddba73d71" // TODO: Video Pinned New
 
-
 // Messages + Pinned Video
 const programId = "71add52f-dd99-42ac-8e96-743aaad41c3b"
 const chatRoomId = "3b097ea8-2b74-42b7-a810-5853b9796e00"
-const widgetId = "17005722-b9d1-421c-ba1d-d4a58824b36e"
+const widgetId = "39960108-acd7-4f2a-a1a8-1772888e0fe6"
 const widgetKind = "text-prediction"
 // // https://cf-blast.livelikecdn.com/producer/applications/BJSFlQAxraN9F99EcVOzpva7G8ohtJdGKpRdx3Ml/chat-rooms/1ad3b3ae-c25f-4f3b-8873-727b1bf7ebbb/pinned-messages
 
