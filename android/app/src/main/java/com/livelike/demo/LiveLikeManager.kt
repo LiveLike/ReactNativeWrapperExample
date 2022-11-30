@@ -12,7 +12,7 @@ import com.livelike.engagementsdk.publicapis.ErrorDelegate
 object LiveLikeManager {
 
 
-    lateinit var engagementSDK: EngagementSDK;
+    var engagementSDK: EngagementSDK? = null;
     var userAccessToken: String? = null;
     var contentSession: LiveLikeContentSession? = null
     const val PREF_USER_ACCESS_TOKEN = "user_access_token"
@@ -20,7 +20,7 @@ object LiveLikeManager {
 
     @ReactMethod
     fun subscribeUserStream(key: String, promise: Promise) {
-        engagementSDK.userStream.subscribe(key) {
+        engagementSDK?.userStream?.subscribe(key) {
             promise.resolve(it?.nickname)
             unSubscribeUserStream()
         }
@@ -28,12 +28,12 @@ object LiveLikeManager {
 
     @ReactMethod
     fun unSubscribeUserStream() {
-        engagementSDK.userStream.subscribe("invalid-key") {}
+        engagementSDK?.userStream?.subscribe("invalid-key") {}
     }
 
 
     @Synchronized private fun createContentSession(programId: String): LiveLikeContentSession {
-        this.contentSession = engagementSDK.createContentSession(programId,  null, false)
+        this.contentSession = engagementSDK?.createContentSession(programId,  null, false)
         return this.contentSession!!
 
     }
@@ -106,6 +106,6 @@ object LiveLikeManager {
                         ).apply()
                     }
                 })
-        }!!
+        }
     }
 }

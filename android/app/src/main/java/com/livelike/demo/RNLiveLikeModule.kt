@@ -30,8 +30,8 @@ class RNLiveLikeModule(
 
     @ReactMethod
     fun getChatRoomName(chatRoomId: String, promise: Promise) {
-        LiveLikeManager.engagementSDK.chat()
-            .getChatRoom(chatRoomId, object : LiveLikeCallback<ChatRoomInfo>() {
+        LiveLikeManager.engagementSDK?.chat()
+            ?.getChatRoom(chatRoomId, object : LiveLikeCallback<ChatRoomInfo>() {
                 override fun onResponse(chatRoomDetails: ChatRoomInfo?, error: String?) {
                     chatRoomDetails?.let {
                         return promise.resolve(chatRoomDetails?.title)
@@ -45,7 +45,7 @@ class RNLiveLikeModule(
 
     @ReactMethod
     fun getCurrentUserProfileId(promise: Promise) {
-        LiveLikeManager.engagementSDK.getCurrentUserDetails(object :
+        LiveLikeManager.engagementSDK?.getCurrentUserDetails(object :
             com.livelike.engagementsdk.publicapis.LiveLikeCallback<LiveLikeUserApi>() {
             override fun onResponse(result: LiveLikeUserApi?, error: String?) {
                 result?.let {

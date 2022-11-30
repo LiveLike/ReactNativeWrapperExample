@@ -89,7 +89,7 @@ class LiveLikeWidgetView(
     fun displayWidget(widgetDetails : LiveLikeWidget) {
         widgetDetails.let {
             renderWidget = true
-            this.widgetView.displayWidget(LiveLikeManager.engagementSDK, it)
+            LiveLikeManager.engagementSDK?.let { it1 -> this.widgetView.displayWidget(it1, it) }
             mainHandler.sendEmptyMessageDelayed(1,1)
         }
     }

@@ -8,11 +8,11 @@ const clientId = "mOBYul18quffrBDuq2IACKtVuLbUzXIPye5S3bq5"
 const programId = "71add52f-dd99-42ac-8e96-743aaad41c3b"
 const {LiveLikeModule} = NativeModules
 
-const updateNickName = (viewId, nickName) => {
+const setProgram = (viewId) => {
     UIManager.dispatchViewManagerCommand(
         viewId,
-        UIManager.LiveLikeChatWidgetView.Commands.updateNickName.toString(),
-        [viewId, nickName]
+        UIManager.LiveLikeWidgetView.Commands.setProgram.toString(),
+        [viewId, programId]
     );
 }
 
@@ -20,7 +20,12 @@ export const LiveLikeAndroidView = () => {
 
     const ref = useRef(null);
     useEffect(() => {
-        LiveLikeModule.initializeSDK(clientId)
+        (async () =>{
+            await LiveLikeModule.initializeSDK(clientId)
+            const viewId = findNodeHandle(ref.current);
+            setProgram(viewId);
+        })();
+       
     }, [])
 
     return (
@@ -32,8 +37,6 @@ export const LiveLikeAndroidView = () => {
                 width: PixelRatio.getPixelSizeForLayoutSize(145)
             }}
             ref={ref}
-        
-            programId={programId}
             onWidgetShown={(event) => {
                 console.log('DEBUG1:', 'widget shown')
             }}
