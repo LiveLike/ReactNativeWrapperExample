@@ -2,24 +2,18 @@ package com.livelike.demo
 
 import android.os.Build
 import com.facebook.react.ReactActivity
-import com.livelike.demo.ui.main.PageViewModel
 import android.os.Bundle
-import android.widget.Toast
-import android.widget.Toast.LENGTH_LONG
 import androidx.activity.viewModels
-import com.livelike.demo.R
 import com.facebook.react.ReactActivityDelegate
 import expo.modules.ReactActivityDelegateWrapper
 
 class MainActivity : ReactActivity() {
 
-    private val pageViewModel: PageViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         // Set the theme to AppTheme BEFORE onCreate to support 
         // coloring the background, status bar, and navigation bar.
         // This is required for expo-splash-screen.
         setTheme(R.style.AppTheme)
-        pageViewModel.initEngagementSDK(applicationContext = applicationContext)
         super.onCreate(null)
     }
 
@@ -57,12 +51,4 @@ class MainActivity : ReactActivity() {
         super.invokeDefaultOnBackPressed()
     }
 
-    companion object {
-        const val ID_SHARED_PREFS = "stored_ids"
-        const val CLIENT_ID_KEY = "saved_client_id"
-        const val PROGRAM_ID_KEY = "saved_program_id"
-        const val PUBLIC_CHAT_ID_KEY = "saved_public_chat_id"
-        const val INFLUENCER_CHAT_ID_KEY = "saved_influencer_id"
-
-    }
 }

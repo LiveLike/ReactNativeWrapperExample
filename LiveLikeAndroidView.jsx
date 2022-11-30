@@ -1,5 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {findNodeHandle, NativeModules, requireNativeComponent, UIManager} from 'react-native';
+import { PixelRatio } from "react-native";
 
 export const LiveLikeWidgetView = requireNativeComponent('LiveLikeWidgetView');
 
@@ -15,8 +16,6 @@ const updateNickName = (viewId, nickName) => {
     );
 }
 
-const TIME_DELAY = 13000
-
 export const LiveLikeAndroidView = () => {
 
     const ref = useRef(null);
@@ -25,24 +24,21 @@ export const LiveLikeAndroidView = () => {
     }, [])
 
     return (
-        <View style={{
-            marginTop: 12,
-            height: 500,
-            width: '100%',
-            position: 'absolute',
-            left: 0,
-            top: 0
-        }}>
-            <LiveLikeWidgetView
-                programId={programId}
-                showAskWidget={show}
-                style={{flex: 1}}
-                onWidgetShown={(event) => {
-                    console.log('DEBUG1:', 'widget shown')
-                }}
-                onWidgetHidden={(event) => {
-                    console.log('DEBUG2:', 'widget hidden')
-                }}
-            />
-        </View>
+        <LiveLikeWidgetView
+            style={{
+                // converts dpi to px, provide desired height
+                height: PixelRatio.getPixelSizeForLayoutSize(200),
+                // converts dpi to px, provide desired width
+                width: PixelRatio.getPixelSizeForLayoutSize(145)
+            }}
+            ref={ref}
+        
+            programId={programId}
+            onWidgetShown={(event) => {
+                console.log('DEBUG1:', 'widget shown')
+            }}
+            onWidgetHidden={(event) => {
+                console.log('DEBUG2:', 'widget hidden')
+            }}
+        />
     )};

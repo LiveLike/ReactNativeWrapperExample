@@ -2,7 +2,6 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Platform, View } from 'react-native';
 import { requireNativeComponent } from 'react-native';
 import { LiveLikeAndroidView } from './LiveLikeAndroidView';
-const LiveLikeiOSView = requireNativeComponent("LiveLikeiOSView")
 
 export default function App() {
   const isIOS = Platform.OS == 'ios';

@@ -1,16 +1,12 @@
 package com.livelike.demo
 
 import android.content.Context
-import android.util.Log
 import com.facebook.react.bridge.Promise
 import com.facebook.react.bridge.ReactMethod
-import com.livelike.demo.ui.main.PageViewModel.Companion.PREF_USER_ACCESS_TOKEN
 import com.livelike.engagementsdk.EngagementSDK
 import com.livelike.engagementsdk.LiveLikeContentSession
 import com.livelike.engagementsdk.chat.LiveLikeChatSession
 import com.livelike.engagementsdk.core.AccessTokenDelegate
-import com.livelike.engagementsdk.core.utils.LogLevel
-import com.livelike.engagementsdk.core.utils.minimumLogLevel
 import com.livelike.engagementsdk.publicapis.ErrorDelegate
 
 object LiveLikeManager {
@@ -77,9 +73,6 @@ object LiveLikeManager {
 
     @ReactMethod
     fun initializeSDK(applicationContext: Context, clientId: String,  promise: Promise) {
-
-        minimumLogLevel = LogLevel.Verbose
-
         engagementSDK = clientId?.let {
             EngagementSDK(
                 it,
