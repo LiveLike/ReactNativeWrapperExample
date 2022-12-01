@@ -3,20 +3,20 @@ import EngagementSDK
 class LiveLikeView: UIView {
   
   weak var separatedVideoViewController: SeparatedVideoViewController?
-  private var sdk: EngagementSDK!
   
   override init(frame: CGRect) {
     super.init(frame: frame)
-    setupEngagementSDK()
-  }
   
-  private func setupEngagementSDK() {
-    sdk = EngagementSDK.init(config: EngagementSDKConfig(clientID: "mOBYul18quffrBDuq2IACKtVuLbUzXIPye5S3bq5"))
-    EngagementSDK.logLevel = .debug
+  }
     
-  }
-  
   required init?(coder aDecoder: NSCoder) { fatalError("nope") }
+  
+  @objc var programId = "" {
+      didSet {
+        
+        
+      }
+    }
   
   override func layoutSubviews() {
     super.layoutSubviews()
@@ -26,11 +26,12 @@ class LiveLikeView: UIView {
     } else {
       separatedVideoViewController?.view.frame = bounds
     }
+    separatedVideoViewController?.setProgram(programId: programId)
   }
   
   private func embed() {
     
-    let vc = SeparatedVideoViewController(sdk : self.sdk)
+    let vc = SeparatedVideoViewController()
     let parentVC = parentViewController
     parentVC?.addChild(vc)
     addSubview(vc.view)
@@ -51,4 +52,6 @@ extension UIView {
     }
     return nil
   }
+  
+  
 }
