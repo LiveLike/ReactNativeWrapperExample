@@ -9,17 +9,23 @@ class Livelike: RCTEventEmitter {
         return ["onMessageReceived", "onMessageDeleted", "onWidgetReceived", "onPollVotesChange", "onDebugLog"];
     }
     
-    var engagementSDK: EngagementSDK!
     var accessToken: String = ""
-    var contentSession: ContentSession?
-    var chatSession: ChatSession?
-    var producerChatSession: ChatSession?
-    var currentAccessToken: String?
+        var currentAccessToken: String?
     var currentQuizWidgetModel: QuizWidgetModel?
     var currentPollWidgetModel: PollWidgetModel?
     var currentWidget: Widget?
     
     
+  struct DataProvider {
+      static var shared = DataProvider()
+      var engagementSDK: EngagementSDK!
+      var contentSession: ContentSession?
+      var chatSession: ChatSession?
+      var producerChatSession: ChatSession?
+      private init() {
+      }
+    }
+  
     override init() {
         super.init()
     }
@@ -53,8 +59,8 @@ class Livelike: RCTEventEmitter {
         var sdkConfig = EngagementSDKConfig(clientID: clientID)
         sdkConfig.accessTokenStorage = self
         
-        engagementSDK = EngagementSDK(config: sdkConfig)
-        engagementSDK.getCurrentUserProfileID { result in
+        DataProvider.shared.engagementSDK = EngagementSDK(config: sdkConfig)
+        DataProvider.shared.engagementSDK.getCurrentUserProfileID { result in
             switch result {
             case .success(let profileID):
                 resolve(["accessToken": self.currentAccessToken, "profileID": profileID])
@@ -69,14 +75,14 @@ class Livelike: RCTEventEmitter {
     func startContentSession(programID: String, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
         debugLog(message: "startContentSession \(programID)")
         let config = SessionConfiguration(programID: programID)
-        contentSession = engagementSDK.contentSession(config: config)
-        contentSession?.delegate = self
+        DataProvider.shared.contentSession = DataProvider.shared.engagementSDK.contentSession(config: config)
+        DataProvider.shared.contentSession?.delegate = self
         resolve(true)
     }
     
     @objc(withResolver:withRejecter:)
     func closeContentSession(resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
-        contentSession?.close()
+      DataProvider.shared.contentSession?.close()
         resolve(true)
     }
     
@@ -85,13 +91,13 @@ class Livelike: RCTEventEmitter {
         debugLog(message: "joinProducerChatRoom \(roomID)")
         let config = ChatSessionConfig(roomID: roomID)
         debugLog(message: "connectChatRoom")
-        engagementSDK.connectChatRoom(config: config) { [weak self] result in
+        DataProvider.shared.engagementSDK.connectChatRoom(config: config) { [weak self] result in
               guard let self = self else { return }
                 switch result {
                 case .success(let chatSession):
                     self.debugLog(message: "connectChatRoom success")
-                    self.producerChatSession = chatSession
-                    self.producerChatSession?.addDelegate(self)
+                    DataProvider.shared.producerChatSession = chatSession
+                    DataProvider.shared.producerChatSession?.addDelegate(self)
                     print("joined producer chat room \(chatSession.roomID)")
                     resolve(chatSession.roomID)
                 case .failure(let error):
@@ -103,7 +109,7 @@ class Livelike: RCTEventEmitter {
     
     @objc(joinChatRoom:avatarURL:withResolver:withRejecter:)
     func joinChatRoom(roomID: String, avatarURL: String?, resolve:@escaping RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
-        self.engagementSDK.createUserChatRoomMembership(roomID: roomID) {
+        DataProvider.shared.engagementSDK.createUserChatRoomMembership(roomID: roomID) {
             result in
             switch result {
             case .success(let member):
@@ -113,15 +119,15 @@ class Livelike: RCTEventEmitter {
             }
         }
         let config = ChatSessionConfig(roomID: roomID)
-        engagementSDK.connectChatRoom(config: config) { [weak self] result in
+        DataProvider.shared.engagementSDK.connectChatRoom(config: config) { [weak self] result in
               guard let self = self else { return }
                 switch result {
                 case .success(let chatSession):
-                    self.chatSession = chatSession
+                    DataProvider.shared.chatSession = chatSession
                     if let avatarURL = avatarURL {
-                        self.chatSession?.avatarURL = URL(string: avatarURL)
+                        DataProvider.shared.chatSession?.avatarURL = URL(string: avatarURL)
                     }
-                    self.chatSession?.addDelegate(self)
+                    DataProvider.shared.chatSession?.addDelegate(self)
                     self.sendOnMessageReceivedEvent(messages: chatSession.messages, roomID: chatSession.roomID)
                     print("joined chat room \(chatSession.roomID)")
                     resolve(chatSession.roomID)
@@ -151,7 +157,7 @@ class Livelike: RCTEventEmitter {
     
     @objc(getProgramLeaderboards:withResolver:withRejecter:)
     func getProgramLeaderboards(programID: String, resolve: @escaping RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) -> Void {
-        engagementSDK.getLeaderboards(programID: programID) { result in
+        DataProvider.shared.engagementSDK.getLeaderboards(programID: programID) { result in
             switch result {
             case .success(let leaderboards):
                 let leaderboardDicts: NSMutableArray = []
@@ -202,11 +208,11 @@ class Livelike: RCTEventEmitter {
     
     @objc(sendMessage:)
     func sendMessage(message: String) -> Void {
-        guard let chatSession = chatSession else {
+      guard let chatSession = DataProvider.shared.chatSession else {
             return
         }
         let textMessage = NewChatMessage(text: message)
-        chatSession.sendMessage(textMessage) { result in
+      DataProvider.shared.chatSession?.sendMessage(textMessage) { result in
             switch result {
             case .success(let chatMessage):
                 print("Chat Message ID: \(chatMessage.id) successfuly sent")
@@ -219,10 +225,10 @@ class Livelike: RCTEventEmitter {
     
     @objc(sendEvent:)
     func sendEvent(event: String) -> Void {
-        guard let producerChatSession = producerChatSession else {
+      guard let producerChatSession = DataProvider.shared.producerChatSession else {
             return
         }
-        producerChatSession.sendCustomMessage(event) { result in
+      DataProvider.shared.producerChatSession?.sendCustomMessage(event) { result in
             switch result {
             case .success(let chatMessage):
                 print("Event Message ID: \(chatMessage.id) successfuly sent")

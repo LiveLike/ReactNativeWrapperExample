@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Platform, View } from 'react-native';
 import { LiveLikeAndroidView } from './LiveLikeAndroidView';
-import { RNLiveLikeiOSView } from './RNLiveLikeiOSView';
+import { LiveLikeiOSView } from './LiveLikeiOSView';
 
 
 export default function App() {
@@ -9,7 +9,7 @@ export default function App() {
   return (
     <View style={styles.container}>
      {isIOS ? (
-        <RNLiveLikeiOSView style={styles.wrapper}></RNLiveLikeiOSView>
+        <LiveLikeiOSView style={styles.wrapper}></LiveLikeiOSView>
       ) : (
         <LiveLikeAndroidView style={styles.wrapper}></LiveLikeAndroidView>
       )}

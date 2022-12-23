@@ -1,18 +1,26 @@
-package com.livelike.demo.widget
+package com.reactnativelivelike
 
-import android.os.Handler
-import android.os.Message
+import android.util.Log
 import android.view.Choreographer
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.LinearLayout
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.facebook.react.bridge.*
+import com.facebook.react.modules.core.DeviceEventManagerModule
 import com.facebook.react.uimanager.ThemedReactContext
+import com.livelike.demo.DebugLog
 import com.livelike.demo.LiveLikeManager
 import com.livelike.demo.R
+
 import com.livelike.engagementsdk.LiveLikeContentSession
 import com.livelike.engagementsdk.LiveLikeWidget
+import com.livelike.engagementsdk.WidgetListener
+import com.livelike.engagementsdk.core.services.messaging.proxies.LiveLikeWidgetEntity
+import com.livelike.engagementsdk.core.services.messaging.proxies.WidgetInterceptor
+import com.livelike.engagementsdk.widget.LiveLikeWidgetViewFactory
 import com.livelike.engagementsdk.widget.view.WidgetView
+import com.livelike.engagementsdk.widget.widgetModel.*
 
 class LiveLikeWidgetView(
     val context: ThemedReactContext,
@@ -22,11 +30,14 @@ class LiveLikeWidgetView(
 
     var contentSession: LiveLikeContentSession? = null
     lateinit var widgetView: WidgetView;
+    //  var widgetDetails: LiveLikeWidget? = null
     var fallback: Choreographer.FrameCallback;
     private var renderWidget = false
+    val debugLog = DebugLog
 
     init {
-        this.applicationContext.addLifecycleEventListener(this)
+        debugLog.context = applicationContext
+        LiveLikeManager.context.addLifecycleEventListener(this)
         this.fallback = Choreographer.FrameCallback() {
             manuallyLayoutChildren();
             viewTreeObserver.dispatchOnGlobalLayout();
@@ -36,63 +47,44 @@ class LiveLikeWidgetView(
         }
         Choreographer.getInstance().postFrameCallback(fallback)
         createView()
+        println("INITIALIZE")
+
     }
 
     private fun createView() {
         val parentView = LayoutInflater.from(context).inflate(R.layout.fc_widget_view, null) as ConstraintLayout;
         addView(parentView)
-        widgetView = parentView.findViewById(R.id.widget_view)
+        widgetView = parentView.findViewById(R.id.widget_view);
     }
 
-    override fun onHostResume() {
+    override fun onHostResume() {}
 
-    }
-
-    override fun onHostPause() {
-
-    }
+    override fun onHostPause() {}
 
     override fun onHostDestroy() {
-//        contentSession?.close()
-        this.contentSession = null
+//    this.contentSession = null
     }
 
-    fun updateContentSession(contentSession: LiveLikeContentSession) {
-        this.contentSession = contentSession
-        contentSession?.widgetStream?.subscribe(this) {
-            it?.let {
-                this.displayWidget(it)
-            }
-        }
-    }
-
-    fun hideWidget() {
-        this.renderWidget = false
-        contentSession?.widgetInterceptor?.dismissWidget()
-        widgetView.clearWidget()
-    }
+//    fun updateContentSession(contentSession: LiveLikeContentSession?) {
+//        this.contentSession = contentSession;
+//        println("UPDATE SESSION")
+////    widgetView.setSession(contentSession)
+//        subscribeWidgetStream()
+//    }
 
 
-    var mainHandler = object : Handler(){
-        override fun handleMessage(msg: Message) {
-            super.handleMessage(msg)
-            if (msg!!.what ==1){
-                render()
-            }
-        }
-    }
-
-    private fun render() {
-        Choreographer.getInstance().postFrameCallback(this.fallback)
-    }
-
-    fun displayWidget(widgetDetails : LiveLikeWidget) {
-        widgetDetails.let {
+    fun displayAskWidget(widgetDetails: LiveLikeWidget) {
+        println("DISPLAY WIDGET")
+        widgetDetails?.let {
             renderWidget = true
-            LiveLikeManager.engagementSDK?.let { it1 -> this.widgetView.displayWidget(it1, it) }
-            mainHandler.sendEmptyMessageDelayed(1,1)
+            this.widgetView.displayWidget(LiveLikeManager.engagementSDK, it)
+//        Choreographer.getInstance().postFrameCallback(this.fallback)
         }
     }
+
+
+
+
 
     fun manuallyLayoutChildren() {
         for (i in 0 until getChildCount()) {
@@ -104,4 +96,5 @@ class LiveLikeWidgetView(
             child.layout(0, 0, child.getMeasuredWidth(), child.getMeasuredHeight());
         }
     }
+
 }
