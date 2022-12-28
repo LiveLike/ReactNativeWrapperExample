@@ -1,0 +1,32 @@
+{
+  "pins" : [
+    {
+      "identity" : "livelike-ios-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "git@bitbucket.org:livelike/livelike-ios-sdk.git",
+      "state" : {
+        "revision" : "13fe794d5d44de594b9217f0071695c6b660f48b",
+        "version" : "2.59.2"
+      }
+    },
+    {
+      "identity" : "lottie-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/airbnb/lottie-ios.git",
+      "state" : {
+        "revision" : "79a0b70547f7c40ea54c67487f935fa2f2eaaadc",
+        "version" : "3.2.3"
+      }
+    },
+    {
+      "identity" : "swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pubnub/swift.git",
+      "state" : {
+        "revision" : "999b657db0c31a4f44bf749c6383c253155d3690",
+        "version" : "4.1.2"
+      }
+    }
+  ],
+  "version" : 2
+}

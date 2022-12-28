@@ -7,18 +7,25 @@ const Livelike = NativeModules.Livelike ? NativeModules.Livelike : new Proxy({},
     }
   });
 
-const clientId = "mOBYul18quffrBDuq2IACKtVuLbUzXIPye5S3bq5"
-const programId = "71add52f-dd99-42ac-8e96-743aaad41c3b"
+const clientId = "vGgUtbZTQWW6C6ROKSqRAO9wdrZaGffXEzYIAxwQ"
+const programId = "285e4d20-b60c-415d-9624-394646b4471a"
 
 export const RNLiveLikeiOSView = () => {
     const ref = useRef(null);
     useEffect(() => {
         (async () =>{
           await Livelike.initialize(clientId, '')
+          await Livelike.startContentSession(programId)
+          ref.current.setNativeProps({
+            programId: programId,
+          });
         })();
     }, [])
-
-    return (
-        <LiveLikeiOSView ref={ref}></LiveLikeiOSView>
+  return (
+      
+      <LiveLikeiOSView  style={{
+        flex: 1, alignItems: "center", justifyContent: "center"
+      }}
+        ref={ref}></LiveLikeiOSView>
     )
 };

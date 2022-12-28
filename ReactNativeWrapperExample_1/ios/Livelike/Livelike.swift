@@ -24,18 +24,12 @@ class Livelike: RCTEventEmitter, AccessTokenStorage {
     
     
     var accessToken: String = ""
-    var contentSession: ContentSession?
-    var chatSession: ChatSession?
-    var producerChatSession: ChatSession?
     var currentAccessToken: String?
-    var currentQuizWidgetModel: QuizWidgetModel?
-    var currentPollWidgetModel: PollWidgetModel?
-    var currentWidget: Widget?
     
   struct DataProvider {
     static var shared = DataProvider()
     var engagementSDK: EngagementSDK!
-
+    var contentSession: ContentSession?
     private init() {
     }
   }
@@ -67,13 +61,14 @@ class Livelike: RCTEventEmitter, AccessTokenStorage {
     @objc(startContentSession:withResolver:withRejecter:)
     func startContentSession(programID: String, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
         let config = SessionConfiguration(programID: programID)
-        contentSession = DataProvider.shared.engagementSDK.contentSession(config: config)
+        DataProvider.shared.contentSession = DataProvider.shared.engagementSDK?.contentSession(config: config)
         resolve(true)
     }
     
     @objc(withResolver:withRejecter:)
     func closeContentSession(resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
-        contentSession?.close()
+        DataProvider.shared.contentSession?.close()
+        DataProvider.shared.contentSession = nil
         resolve(true)
     }
   

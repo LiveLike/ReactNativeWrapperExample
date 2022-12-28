@@ -1,4 +1,5 @@
 import EngagementSDK
+import UIKit
 
 class LiveLikeView: UIView {
   
@@ -13,8 +14,7 @@ class LiveLikeView: UIView {
   
   @objc var programId = "" {
       didSet {
-        
-        
+        separatedVideoViewController?.setContentSession()
       }
     }
   
@@ -26,7 +26,7 @@ class LiveLikeView: UIView {
     } else {
       separatedVideoViewController?.view.frame = bounds
     }
-    separatedVideoViewController?.setProgram(programId: programId)
+    
   }
   
   private func embed() {
