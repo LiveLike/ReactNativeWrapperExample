@@ -1,7 +1,5 @@
 package com.livelike.demo.widget
 
-import android.os.Handler
-import android.os.Message
 import android.view.Choreographer
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -15,13 +13,13 @@ import com.google.gson.JsonParser
 import com.livelike.demo.LiveLikeManager
 import com.livelike.engagementsdk.LiveLikeContentSession
 import com.livelike.engagementsdk.LiveLikeEngagementTheme
+import com.livelike.engagementsdk.widget.timeline.IntractableWidgetTimelineViewModel
 import com.livelike.engagementsdk.widget.timeline.WidgetTimeLineViewModel
 import com.livelike.engagementsdk.widget.timeline.WidgetsTimeLineView
 import com.reactnativewrapperexample_1.R
 import java.io.IOException
 import java.io.InputStream
-import com.livelike.engagementsdk.core.services.network.Result;
-import com.livelike.engagementsdk.widget.timeline.IntractableWidgetTimelineViewModel
+import com.livelike.utils.Result
 
 class LiveLikeWidgetTimelineView(
     val context: ThemedReactContext,
@@ -39,7 +37,7 @@ class LiveLikeWidgetTimelineView(
             manuallyLayoutChildren();
             viewTreeObserver.dispatchOnGlobalLayout();
             if(re_render) {
-                Choreographer.getInstance().postFrameCallbackDelayed(this!!.fallback,1500)
+                Choreographer.getInstance().postFrameCallbackDelayed(this!!.fallback,800)
             }
         }
         Choreographer.getInstance().postFrameCallback(fallback)
@@ -111,6 +109,7 @@ class LiveLikeWidgetTimelineView(
 
     override fun onHostDestroy() {
         re_render = false
+        Choreographer.getInstance().removeFrameCallback { this.fallback }
         this.contentSession = null
     }
 
