@@ -1,6 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {findNodeHandle, NativeModules, requireNativeComponent, UIManager} from 'react-native';
-import { PixelRatio } from "react-native";
 
 export const LiveLikeWidgetView = requireNativeComponent('LiveLikeWidgetView');
 
@@ -20,21 +19,18 @@ export const LiveLikeAndroidView = () => {
 
     const ref = useRef(null);
     useEffect(() => {
-        (async () =>{
+        (async () => {
             await LiveLikeModule.initializeSDK(clientId)
             const viewId = findNodeHandle(ref.current);
             setProgram(viewId);
         })();
        
     }, [])
-
+    
     return (
         <LiveLikeWidgetView
             style={{
-                // converts dpi to px, provide desired height
-                height: PixelRatio.getPixelSizeForLayoutSize(200),
-                // converts dpi to px, provide desired width
-                width: PixelRatio.getPixelSizeForLayoutSize(145)
+                flex:1
             }}
             ref={ref}
             onWidgetShown={(event) => {

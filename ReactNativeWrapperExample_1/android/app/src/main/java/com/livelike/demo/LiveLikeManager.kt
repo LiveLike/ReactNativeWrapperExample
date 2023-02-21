@@ -33,7 +33,7 @@ object LiveLikeManager {
 
 
     @Synchronized private fun createContentSession(programId: String): LiveLikeContentSession {
-        this.contentSession = engagementSDK?.createContentSession(programId,  null, false)
+        this.contentSession = engagementSDK?.createContentSession(programId)
         return this.contentSession!!
 
     }

@@ -9,7 +9,7 @@ import com.livelike.demo.LiveLikeManager
 
 
 class LiveLikeWidgetViewManager(val applicationContext: ReactApplicationContext) :
-    ViewGroupManager<LiveLikeWidgetView>() {
+    ViewGroupManager<LiveLikeWidgetTimelineView>() {
 
     val REACT_CLASS = "LiveLikeWidgetView"
     val SET_PROGRAM = 1
@@ -28,7 +28,7 @@ class LiveLikeWidgetViewManager(val applicationContext: ReactApplicationContext)
      * Handle "create" command (called from JS) and call createFragment method
      */
     override fun receiveCommand(
-        root: LiveLikeWidgetView,
+        root: LiveLikeWidgetTimelineView,
         commandId: String,
         args: ReadableArray?
     ) {
@@ -41,11 +41,11 @@ class LiveLikeWidgetViewManager(val applicationContext: ReactApplicationContext)
         }
     }
 
-    override fun createViewInstance(reactContext: ThemedReactContext): LiveLikeWidgetView {
-        return LiveLikeWidgetView(reactContext, applicationContext);
+    override fun createViewInstance(reactContext: ThemedReactContext): LiveLikeWidgetTimelineView {
+        return LiveLikeWidgetTimelineView(reactContext, applicationContext);
     }
 
-   fun setProgramIdFrmArgs(view: LiveLikeWidgetView,args: ReadableArray?) {
+   fun setProgramIdFrmArgs(view: LiveLikeWidgetTimelineView,args: ReadableArray?) {
         val session = args?.getString(1)?.let { LiveLikeManager.getContentSession(it) }
         session?.let {
             view.updateContentSession(it)
@@ -53,7 +53,7 @@ class LiveLikeWidgetViewManager(val applicationContext: ReactApplicationContext)
 
     }
 
-    override fun onDropViewInstance(view: LiveLikeWidgetView) {
+    override fun onDropViewInstance(view: LiveLikeWidgetTimelineView) {
         view.onHostDestroy()
         super.onDropViewInstance(view)
     }
