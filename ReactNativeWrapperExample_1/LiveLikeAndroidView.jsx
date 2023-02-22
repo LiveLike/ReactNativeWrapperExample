@@ -3,8 +3,8 @@ import {findNodeHandle, NativeModules, requireNativeComponent, UIManager} from '
 
 export const LiveLikeWidgetView = requireNativeComponent('LiveLikeWidgetView');
 
-const clientId = "mOBYul18quffrBDuq2IACKtVuLbUzXIPye5S3bq5"
-const programId = "71add52f-dd99-42ac-8e96-743aaad41c3b"
+const clientId = 'itS3XnEs8VaJbPoioJGMvGl7DnlYGYY869k9z213';
+const programId = 'f68581a6-a28a-41ba-bcf8-7ebe18c4bb55';
 const {LiveLikeModule} = NativeModules
 
 const setProgram = (viewId) => {
