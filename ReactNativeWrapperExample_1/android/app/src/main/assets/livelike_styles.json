@@ -3,10 +3,10 @@
         "alert": {
             "root": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -37,8 +37,8 @@
                 "borderRadius": [
                     0,
                     0,
-                    0,
-                    0
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -67,10 +67,10 @@
             },
             "footer": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -99,10 +99,10 @@
             },
             "timer": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -131,10 +131,10 @@
             },
             "dismiss": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -163,21 +163,21 @@
             },
             "title": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
-                    8,
-                    0,
-                    8,
-                    16
+                    32,
+                    32,
+                    32,
+                    32
                 ],
                 "fontFamily": [
                     "Roboto"
                 ],
-                "fontSize": 16,
+                "fontSize": 12,
                 "borderWidth": 0,
                 "fontWeight": "normal",
                 "margin": [
@@ -189,29 +189,29 @@
                 "borderColor": "DEDEDE38",
                 "fontColor": "FFFFFF",
                 "background": {
-                    "color": "0A0B0B",
+                    "color": "920005",
                     "format": "fill"
                 }
             },
             "header": {
                 "borderRadius": [
-                    0,
-                    0,
+                    5,
+                    5,
                     0,
                     0
                 ],
                 "padding": [
-                    0,
-                    16,
-                    0,
-                    0
+                    32,
+                    32,
+                    32,
+                    32
                 ],
                 "fontFamily": [
                     "Roboto"
                 ],
-                "fontSize": 16,
+                "fontSize": 12,
                 "borderWidth": 0,
-                "fontWeight": "normal",
+                "fontWeight": "700",
                 "margin": [
                     0,
                     0,
@@ -233,10 +233,10 @@
         "imageSlider": {
             "root": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -267,8 +267,8 @@
                 "borderRadius": [
                     0,
                     0,
-                    0,
-                    0
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -297,10 +297,10 @@
             },
             "footer": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -329,10 +329,10 @@
             },
             "timer": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -361,10 +361,10 @@
             },
             "dismiss": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -393,21 +393,21 @@
             },
             "title": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
-                    8,
-                    0,
-                    8,
-                    16
+                    32,
+                    32,
+                    32,
+                    32
                 ],
                 "fontFamily": [
                     "Roboto"
                 ],
-                "fontSize": 16,
+                "fontSize": 12,
                 "borderWidth": 0,
                 "fontWeight": "normal",
                 "margin": [
@@ -419,17 +419,52 @@
                 "borderColor": "DEDEDE38",
                 "fontColor": "FFFFFF",
                 "background": {
-                    "color": "0A0B0B",
+                    "color": "920005",
                     "format": "fill"
                 }
             },
-            "header": {},
-            "interactiveTrackRight": {
+            "header": {
                 "borderRadius": [
+                    5,
+                    5,
+                    0,
+                    0
+                ],
+                "padding": [
+                    32,
+                    32,
+                    32,
+                    32
+                ],
+                "fontFamily": [
+                    "Roboto"
+                ],
+                "fontSize": 12,
+                "borderWidth": 0,
+                "fontWeight": "700",
+                "margin": [
                     0,
                     0,
                     0,
                     0
+                ],
+                "borderColor": "DEDEDE38",
+                "fontColor": "FFFFFF",
+                "background": {
+                    "colors": [
+                        "000000",
+                        "920005"
+                    ],
+                    "direction": 90,
+                    "format": "uniformGradient"
+                }
+            },
+            "interactiveTrackRight": {
+                "borderRadius": [
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -458,10 +493,10 @@
             },
             "interactiveTrackLeft": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -490,10 +525,10 @@
             },
             "resultsTrackRight": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -522,10 +557,10 @@
             },
             "resultsTrackLeft": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -554,10 +589,10 @@
             },
             "marker": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -588,10 +623,10 @@
         "prediction": {
             "root": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -620,10 +655,10 @@
             },
             "body": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -652,10 +687,10 @@
             },
             "footer": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -684,10 +719,10 @@
             },
             "timer": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -716,10 +751,10 @@
             },
             "dismiss": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -748,10 +783,10 @@
             },
             "title": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     8,
@@ -780,10 +815,10 @@
             },
             "selectedOptionDescription": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -812,10 +847,10 @@
             },
             "unselectedOptionDescription": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -844,10 +879,10 @@
             },
             "selectedOptionImage": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -876,10 +911,10 @@
             },
             "unselectedOptionBar": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -908,10 +943,10 @@
             },
             "unselectedOptionPercentage": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -940,10 +975,10 @@
             },
             "unselectedOptionImage": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -972,10 +1007,10 @@
             },
             "selectedOptionPercentage": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1004,10 +1039,10 @@
             },
             "unselectedOption": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1036,10 +1071,10 @@
             },
             "header": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1072,10 +1107,10 @@
             },
             "selectedOption": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1104,10 +1139,10 @@
             },
             "selectedOptionBar": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1142,10 +1177,10 @@
         "predictionFollowUp": {
             "root": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1174,10 +1209,10 @@
             },
             "body": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1206,10 +1241,10 @@
             },
             "footer": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1238,10 +1273,10 @@
             },
             "timer": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1270,10 +1305,10 @@
             },
             "dismiss": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1302,10 +1337,10 @@
             },
             "title": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     8,
@@ -1334,10 +1369,10 @@
             },
             "correctOptionPercentage": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1366,10 +1401,10 @@
             },
             "incorrectOptionPercentage": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1398,10 +1433,10 @@
             },
             "correctOptionDescription": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1430,10 +1465,10 @@
             },
             "incorrectOptionDescription": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1462,10 +1497,10 @@
             },
             "correctOptionImage": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1494,10 +1529,10 @@
             },
             "incorrectOptionImage": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1526,10 +1561,10 @@
             },
             "correctOptionBar": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1562,10 +1597,10 @@
             },
             "incorrectOptionBar": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1598,10 +1633,10 @@
             },
             "correctOption": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1630,10 +1665,10 @@
             },
             "incorrectOption": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1662,10 +1697,10 @@
             },
             "selectedOptionDescription": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1694,10 +1729,10 @@
             },
             "unselectedOptionDescription": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1726,10 +1761,10 @@
             },
             "selectedOptionImage": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1758,10 +1793,10 @@
             },
             "unselectedOptionBar": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1790,10 +1825,10 @@
             },
             "unselectedOptionPercentage": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1822,10 +1857,10 @@
             },
             "unselectedOptionImage": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1854,10 +1889,10 @@
             },
             "selectedOptionPercentage": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1886,10 +1921,10 @@
             },
             "unselectedOption": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1918,10 +1953,10 @@
             },
             "header": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1954,10 +1989,10 @@
             },
             "selectedOption": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1986,10 +2021,10 @@
             },
             "selectedOptionBar": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -2024,10 +2059,10 @@
         "poll": {
             "root": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -2058,8 +2093,8 @@
                 "borderRadius": [
                     0,
                     0,
-                    0,
-                    0
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -2088,10 +2123,10 @@
             },
             "footer": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -2120,10 +2155,10 @@
             },
             "timer": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -2152,10 +2187,10 @@
             },
             "dismiss": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -2184,16 +2219,16 @@
             },
             "title": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
-                    8,
-                    0,
-                    8,
-                    16
+                    32,
+                    32,
+                    32,
+                    32
                 ],
                 "fontFamily": [
                     "Roboto"
@@ -2216,10 +2251,10 @@
             },
             "selectedOptionDescription": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -2248,10 +2283,10 @@
             },
             "unselectedOptionDescription": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -2280,10 +2315,10 @@
             },
             "selectedOptionImage": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -2312,10 +2347,10 @@
             },
             "unselectedOptionBar": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -2344,10 +2379,10 @@
             },
             "unselectedOptionPercentage": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -2376,10 +2411,10 @@
             },
             "unselectedOptionImage": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -2408,10 +2443,10 @@
             },
             "selectedOptionPercentage": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -2440,16 +2475,16 @@
             },
             "unselectedOption": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
-                    0,
-                    0,
-                    0,
-                    0
+                    16,
+                    16,
+                    16,
+                    16
                 ],
                 "fontFamily": [
                     "Roboto"
@@ -2472,8 +2507,8 @@
             },
             "header": {
                 "borderRadius": [
-                    0,
-                    0,
+                    5,
+                    5,
                     0,
                     0
                 ],
@@ -2508,16 +2543,16 @@
             },
             "selectedOption": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
-                    0,
-                    0,
-                    0,
-                    0
+                    16,
+                    16,
+                    16,
+                    16
                 ],
                 "fontFamily": [
                     "Roboto"
@@ -2540,10 +2575,10 @@
             },
             "selectedOptionBar": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -2578,10 +2613,10 @@
         "quiz": {
             "root": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -2612,8 +2647,8 @@
                 "borderRadius": [
                     0,
                     0,
-                    0,
-                    0
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -2642,10 +2677,10 @@
             },
             "footer": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -2674,10 +2709,10 @@
             },
             "timer": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -2706,10 +2741,10 @@
             },
             "dismiss": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -2738,21 +2773,21 @@
             },
             "title": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
-                    8,
-                    0,
-                    8,
-                    16
+                    32,
+                    32,
+                    32,
+                    32
                 ],
                 "fontFamily": [
                     "Roboto"
                 ],
-                "fontSize": 16,
+                "fontSize": 12,
                 "borderWidth": 0,
                 "fontWeight": "normal",
                 "margin": [
@@ -2764,16 +2799,16 @@
                 "borderColor": "DEDEDE38",
                 "fontColor": "FFFFFF",
                 "background": {
-                    "color": "0A0B0B",
+                    "color": "920005",
                     "format": "fill"
                 }
             },
             "correctOptionPercentage": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -2784,7 +2819,7 @@
                 "fontFamily": [
                     "Roboto"
                 ],
-                "fontSize": 16,
+                "fontSize": 14,
                 "borderWidth": 0,
                 "fontWeight": "normal",
                 "margin": [
@@ -2802,10 +2837,10 @@
             },
             "incorrectOptionPercentage": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -2816,7 +2851,7 @@
                 "fontFamily": [
                     "Roboto"
                 ],
-                "fontSize": 16,
+                "fontSize": 14,
                 "borderWidth": 0,
                 "fontWeight": "normal",
                 "margin": [
@@ -2834,10 +2869,10 @@
             },
             "correctOptionDescription": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -2848,7 +2883,7 @@
                 "fontFamily": [
                     "Roboto"
                 ],
-                "fontSize": 16,
+                "fontSize": 14,
                 "borderWidth": 0,
                 "fontWeight": "normal",
                 "margin": [
@@ -2866,10 +2901,10 @@
             },
             "incorrectOptionDescription": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -2898,10 +2933,10 @@
             },
             "correctOptionImage": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -2930,10 +2965,10 @@
             },
             "incorrectOptionImage": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -2962,10 +2997,10 @@
             },
             "correctOptionBar": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -2989,8 +3024,8 @@
                 "fontColor": "FFFFFF",
                 "background": {
                     "colors": [
-                        "000000",
-                        "920005"
+                        "67B32D",
+                        "67B32D"
                     ],
                     "direction": 90,
                     "format": "uniformGradient"
@@ -2998,10 +3033,10 @@
             },
             "incorrectOptionBar": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -3025,8 +3060,8 @@
                 "fontColor": "FFFFFF",
                 "background": {
                     "colors": [
-                        "000000",
-                        "920005"
+                        "C60A1E",
+                        "C60A1E"
                     ],
                     "direction": 90,
                     "format": "uniformGradient"
@@ -3034,16 +3069,16 @@
             },
             "correctOption": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
-                    0,
-                    0,
-                    0,
-                    0
+                    16,
+                    16,
+                    16,
+                    16
                 ],
                 "fontFamily": [
                     "Roboto"
@@ -3066,16 +3101,16 @@
             },
             "incorrectOption": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
-                    0,
-                    0,
-                    0,
-                    0
+                    16,
+                    16,
+                    16,
+                    16
                 ],
                 "fontFamily": [
                     "Roboto"
@@ -3098,10 +3133,10 @@
             },
             "selectedOptionDescription": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -3130,10 +3165,10 @@
             },
             "unselectedOptionDescription": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -3162,10 +3197,10 @@
             },
             "selectedOptionImage": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -3194,10 +3229,10 @@
             },
             "unselectedOptionBar": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -3226,10 +3261,10 @@
             },
             "unselectedOptionPercentage": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -3258,10 +3293,10 @@
             },
             "unselectedOptionImage": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -3290,10 +3325,10 @@
             },
             "selectedOptionPercentage": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -3322,16 +3357,16 @@
             },
             "unselectedOption": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
-                    0,
-                    0,
-                    0,
-                    0
+                    16,
+                    16,
+                    16,
+                    16
                 ],
                 "fontFamily": [
                     "Roboto"
@@ -3354,23 +3389,23 @@
             },
             "header": {
                 "borderRadius": [
-                    0,
-                    0,
+                    5,
+                    5,
                     0,
                     0
                 ],
                 "padding": [
-                    0,
-                    16,
-                    0,
-                    0
+                    32,
+                    32,
+                    32,
+                    32
                 ],
                 "fontFamily": [
                     "Roboto"
                 ],
-                "fontSize": 16,
+                "fontSize": 12,
                 "borderWidth": 0,
-                "fontWeight": "normal",
+                "fontWeight": "700",
                 "margin": [
                     0,
                     0,
@@ -3390,16 +3425,16 @@
             },
             "selectedOption": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
-                    0,
-                    0,
-                    0,
-                    0
+                    16,
+                    16,
+                    16,
+                    16
                 ],
                 "fontFamily": [
                     "Roboto"
@@ -3422,10 +3457,10 @@
             },
             "selectedOptionBar": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -3460,10 +3495,10 @@
         "socialEmbed": {
             "root": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -3492,10 +3527,10 @@
             },
             "body": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -3524,10 +3559,10 @@
             },
             "footer": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -3556,10 +3591,10 @@
             },
             "timer": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -3588,10 +3623,10 @@
             },
             "dismiss": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -3620,10 +3655,10 @@
             },
             "title": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     8,
@@ -3654,10 +3689,10 @@
         "richText": {
             "root": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -3686,10 +3721,10 @@
             },
             "body": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -3718,10 +3753,10 @@
             },
             "footer": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -3750,10 +3785,10 @@
             },
             "timer": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -3782,10 +3817,10 @@
             },
             "dismiss": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -3814,10 +3849,10 @@
             },
             "title": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     8,
@@ -3848,10 +3883,10 @@
         "cheerMeter": {
             "root": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -3880,10 +3915,10 @@
             },
             "body": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -3912,10 +3947,10 @@
             },
             "footer": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -3944,10 +3979,10 @@
             },
             "timer": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -3976,10 +4011,10 @@
             },
             "dismiss": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -4008,10 +4043,10 @@
             },
             "title": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     8,
@@ -4040,10 +4075,10 @@
             },
             "header": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -4076,10 +4111,10 @@
             },
             "versus": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -4108,10 +4143,10 @@
             },
             "sideBBar": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -4140,10 +4175,10 @@
             },
             "sideABar": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -4172,10 +4207,10 @@
             },
             "sideAButton": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -4204,10 +4239,10 @@
             },
             "sideBButton": {
                 "borderRadius": [
-                    0,
-                    0,
-                    0,
-                    0
+                    5,
+                    5,
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
