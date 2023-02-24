@@ -35,8 +35,8 @@
             },
             "body": {
                 "borderRadius": [
-                    5,
-                    5,
+                    0,
+                    0,
                     5,
                     5
                 ],
@@ -294,8 +294,8 @@
                 "borderRadius": [
                     0,
                     0,
-                    0,
-                    0
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -692,8 +692,8 @@
                 "borderRadius": [
                     0,
                     0,
-                    0,
-                    0
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
@@ -1332,8 +1332,8 @@
                 "borderRadius": [
                     0,
                     0,
-                    0,
-                    0
+                    5,
+                    5
                 ],
                 "padding": [
                     0,
