@@ -59,6 +59,7 @@ class LiveLikeWidgetTimelineView(
         var timeLineViewModel: WidgetTimeLineViewModel
         contentSession.let { session ->
             timeLineViewModel = IntractableWidgetTimelineViewModel(session!!)
+            timeLineViewModel.decideWidgetInteractivity
             val timeLineView = LiveLikeManager.engagementSDK?.let { sdk ->
                 WidgetsTimeLineView(
                     applicationContext,

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ReactNativeWrapperExample_1</string>
+    <string name="livelike_answered_label">YOUR RESPONSE WAS RECORDED!</string>
+    <string name="livelike_answer_label">SUBMIT</string>
+    <string name="livelike_vote_label">SUBMIT</string>
+    <string name="livelike_voted_label">YOUR RESPONSE WAS RECORDED!</string>
 </resources>
