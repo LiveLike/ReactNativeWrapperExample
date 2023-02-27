@@ -6,18 +6,24 @@ import android.util.Log
 import android.view.Choreographer
 import android.view.LayoutInflater
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.appcompat.widget.LinearLayoutCompat
 import com.facebook.react.bridge.LifecycleEventListener
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.uimanager.ThemedReactContext
+import com.google.gson.JsonParser
 import com.livelike.demo.LiveLikeManager
 import com.livelike.engagementsdk.LiveLikeContentSession
+import com.livelike.engagementsdk.LiveLikeEngagementTheme
 import com.livelike.engagementsdk.LiveLikeWidget
 import com.livelike.engagementsdk.core.services.messaging.proxies.LiveLikeWidgetEntity
 import com.livelike.engagementsdk.core.services.messaging.proxies.WidgetLifeCycleEventsListener
 import com.livelike.engagementsdk.widget.view.WidgetView
 import com.livelike.engagementsdk.widget.viewModel.WidgetStates
+import com.livelike.utils.Result
 import com.reactnativewrapperexample_1.R
+import java.io.IOException
+import java.io.InputStream
 
 class LiveLikeWidgetView(
     val context: ThemedReactContext,
@@ -68,6 +74,26 @@ class LiveLikeWidgetView(
 
             }
 
+        }
+        try {
+            val inputStream: InputStream = applicationContext.assets.open("livelike_styles.json")
+            val size: Int = inputStream.available()
+            val buffer = ByteArray(size)
+            inputStream.read(buffer)
+            val theme = String(buffer)
+            val result =
+                LiveLikeEngagementTheme.instanceFrom(JsonParser.parseString(theme).asJsonObject)
+            if (result is Result.Success) {
+                widgetView?.applyTheme(result.data)
+            } else {
+                Toast.makeText(
+                    context,
+                    "Unable to get the theme json",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        } catch (e: IOException) {
+            e.printStackTrace()
         }
     }
 
