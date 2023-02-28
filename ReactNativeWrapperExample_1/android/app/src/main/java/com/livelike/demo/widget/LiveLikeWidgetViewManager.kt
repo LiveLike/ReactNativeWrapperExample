@@ -9,10 +9,19 @@ import com.livelike.demo.LiveLikeManager
 
 
 class LiveLikeWidgetViewManager(val applicationContext: ReactApplicationContext) :
-    ViewGroupManager<LiveLikeWidgetTimelineView>() {
+    ViewGroupManager<LiveLikeWidgetTimelineLandscapeView>() {
+
+
+    companion object {
+        const val EVENT_WIDGET_READY = "widgetReady"
+    }
 
     val REACT_CLASS = "LiveLikeWidgetView"
     val SET_PROGRAM = 1
+    val SHOW_WIDGET = 2
+    val HIDE_WIDGET = 3
+
+
     override fun getName(): String {
         return REACT_CLASS
     }
@@ -21,14 +30,19 @@ class LiveLikeWidgetViewManager(val applicationContext: ReactApplicationContext)
      * Map the "create" command to an integer
      */
     override fun getCommandsMap(): Map<String, Int>? {
-        return MapBuilder.of("setProgram", SET_PROGRAM)
+        return MapBuilder.of("setProgram", SET_PROGRAM,"showWidget",SHOW_WIDGET,"hideWidget", HIDE_WIDGET)
     }
 
+    override fun getExportedCustomDirectEventTypeConstants(): MutableMap<String, Any>? {
+        var map = HashMap<String, Any>()
+        map.put(EVENT_WIDGET_READY, MapBuilder.of("registrationName", "onReady"));
+        return map;
+    }
     /**
      * Handle "create" command (called from JS) and call createFragment method
      */
     override fun receiveCommand(
-        root: LiveLikeWidgetTimelineView,
+        root: LiveLikeWidgetTimelineLandscapeView,
         commandId: String,
         args: ReadableArray?
     ) {
@@ -37,23 +51,33 @@ class LiveLikeWidgetViewManager(val applicationContext: ReactApplicationContext)
         val commandIdInt = commandId.toInt()
         when (commandIdInt) {
             SET_PROGRAM -> setProgramIdFrmArgs(root, args)
+            HIDE_WIDGET -> hideWidget(root)
+            SHOW_WIDGET -> showWidget(root)
             else -> {}
         }
     }
 
-    override fun createViewInstance(reactContext: ThemedReactContext): LiveLikeWidgetTimelineView {
-        return LiveLikeWidgetTimelineView(reactContext, applicationContext);
+    private fun hideWidget(view:LiveLikeWidgetTimelineLandscapeView) {
+        view.hideWidget()
     }
 
-   fun setProgramIdFrmArgs(view: LiveLikeWidgetTimelineView,args: ReadableArray?) {
+    private fun showWidget(view:LiveLikeWidgetTimelineLandscapeView) {
+        view.displayLastWidget()
+    }
+
+    override fun createViewInstance(reactContext: ThemedReactContext): LiveLikeWidgetTimelineLandscapeView {
+        return LiveLikeWidgetTimelineLandscapeView(reactContext, applicationContext);
+    }
+
+   fun setProgramIdFrmArgs(view: LiveLikeWidgetTimelineLandscapeView,args: ReadableArray?) {
         val session = args?.getString(1)?.let { LiveLikeManager.getContentSession(it) }
         session?.let {
-            view.updateContentSession(it)
+            val configType = args?.getString(2)
+            view.updateContentSession(it,configType)
         }
-
     }
 
-    override fun onDropViewInstance(view: LiveLikeWidgetTimelineView) {
+    override fun onDropViewInstance(view: LiveLikeWidgetTimelineLandscapeView) {
         view.onHostDestroy()
         super.onDropViewInstance(view)
     }

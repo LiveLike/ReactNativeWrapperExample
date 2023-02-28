@@ -3,15 +3,15 @@ import {findNodeHandle, NativeModules, requireNativeComponent, UIManager} from '
 
 export const LiveLikeWidgetView = requireNativeComponent('LiveLikeWidgetView');
 
-const clientId = 'itS3XnEs8VaJbPoioJGMvGl7DnlYGYY869k9z213';
-const programId = 'f68581a6-a28a-41ba-bcf8-7ebe18c4bb55';
+const clientId = '8PqSNDgIVHnXuJuGte1HdvOjOqhCFE1ZCR3qhqaS';
+const programId = '28febd25-3e59-42ff-9549-4aa4198161a6';
 const {LiveLikeModule} = NativeModules
 
 const setProgram = (viewId) => {
     UIManager.dispatchViewManagerCommand(
         viewId,
         UIManager.LiveLikeWidgetView.Commands.setProgram.toString(),
-        [viewId, programId]
+        [viewId, programId,'text-poll']
     );
 }
 
@@ -33,6 +33,13 @@ export const LiveLikeAndroidView = () => {
                 flex:1
             }}
             ref={ref}
+            onReady={(event) => {
+                const viewId = findNodeHandle(ref.current);
+                UIManager.dispatchViewManagerCommand(
+                viewId,
+                UIManager.LiveLikeWidgetView.Commands.showWidget.toString(),
+                [viewId])
+            }}
             onWidgetShown={(event) => {
                 console.log('DEBUG1:', 'widget shown')
             }}
