@@ -24,7 +24,7 @@ export const RNLiveLikeiOSView = () => {
   return (
       
       <LiveLikeiOSView  style={{
-        flex: 1, alignItems: "center", justifyContent: "center"
+        flex: 1
       }}
         ref={ref}></LiveLikeiOSView>
     )
