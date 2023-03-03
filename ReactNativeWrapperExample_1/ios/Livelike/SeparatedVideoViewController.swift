@@ -3,24 +3,31 @@ import EngagementSDK
 import UIKit
 
 class CustomWidgetTimeline: InteractiveWidgetTimelineViewController {
+   
+  var themeFromJson: Theme? = nil
   
-//   static let themeFromJson: Theme = {
-//       let theme = Theme()
-//       if let path = Bundle.main.path(forResource: "livelike_styles", ofType: "json") {
-//           do {
-//               let jsonData = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-//               
-//               return try Theme.create(fromJSONObject: jsonData)
-//           } catch {
-//               // handle error
-//           }
-//       }
-//        return Theme()
-//    }()
-    
+  override init(contentSession:ContentSession) {
+      
+      if let path = Bundle.main.path(forResource: "livelike_styles", ofType: "json") {
+          do {
+            let jsonData = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+            let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
+            themeFromJson = try! Theme.create(fromJSONObject: jsonObject)
+          } catch {
+              // handle error
+             print("Unable to create theme")
+          }
+      }
+      super.init(contentSession: contentSession)
+    }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
     override func makeWidget(_ widgetModel: WidgetModel) -> UIViewController? {
         let widget = super.makeWidget(widgetModel) as? Widget
-        //widget?.theme = CustomWidgetTimeline.themeFromJson
+        widget?.theme = self.themeFromJson ?? Theme()
         return widget
     }
 }

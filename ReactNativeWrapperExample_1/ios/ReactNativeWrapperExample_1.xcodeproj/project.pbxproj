@@ -8,18 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* ReactNativeWrapperExample_1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ReactNativeWrapperExample_1Tests.m */; };
-		0ECF4B12440DC5464FEC9586 /* Pods_ReactNativeWrapperExample_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC51F94B015CA6D41C740EC /* Pods_ReactNativeWrapperExample_1.framework */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		27E4433D4AF96EBB72A96F24 /* libPods-ReactNativeWrapperExample_1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 234C016B73C336794F507F95 /* libPods-ReactNativeWrapperExample_1.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		90618C8612C8FCF7088ACC33 /* Pods_ReactNativeWrapperExample_1_ReactNativeWrapperExample_1Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF362DD3A7955FA754F80AC /* Pods_ReactNativeWrapperExample_1_ReactNativeWrapperExample_1Tests.framework */; };
+		ABAD4BAA517DEBA74E982F8D /* libPods-ReactNativeWrapperExample_1-ReactNativeWrapperExample_1Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F17F9E6682D1C0E8D3CDC6DE /* libPods-ReactNativeWrapperExample_1-ReactNativeWrapperExample_1Tests.a */; };
 		DF43E302295938B300B50B8A /* SeparatedVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43E2FC295938B300B50B8A /* SeparatedVideoViewController.swift */; };
 		DF43E303295938B300B50B8A /* Livelike.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43E2FD295938B300B50B8A /* Livelike.swift */; };
 		DF43E304295938B300B50B8A /* Livelike.m in Sources */ = {isa = PBXBuildFile; fileRef = DF43E2FE295938B300B50B8A /* Livelike.m */; };
 		DF43E305295938B300B50B8A /* LiveLikeiOSViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43E2FF295938B300B50B8A /* LiveLikeiOSViewManager.swift */; };
 		DF43E306295938B300B50B8A /* LiveLikeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43E300295938B300B50B8A /* LiveLikeView.swift */; };
 		DF43E307295938B300B50B8A /* LiveLikeiOSViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF43E301295938B300B50B8A /* LiveLikeiOSViewManager.m */; };
+		DFF7F22229B1D7DB00AE31E9 /* EngagementSDK in Frameworks */ = {isa = PBXBuildFile; productRef = DFF7F22129B1D7DB00AE31E9 /* EngagementSDK */; };
+		DFF7F22429B1D7DB00AE31E9 /* LiveLikeSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DFF7F22329B1D7DB00AE31E9 /* LiveLikeSwift */; };
+		DFF7F22B29B2222F00AE31E9 /* livelike_styles.json in Resources */ = {isa = PBXBuildFile; fileRef = DFF7F22A29B2222F00AE31E9 /* livelike_styles.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,17 +39,16 @@
 		00E356EE1AD99517003FC87E /* ReactNativeWrapperExample_1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactNativeWrapperExample_1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* ReactNativeWrapperExample_1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactNativeWrapperExample_1Tests.m; sourceTree = "<group>"; };
-		0CF362DD3A7955FA754F80AC /* Pods_ReactNativeWrapperExample_1_ReactNativeWrapperExample_1Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactNativeWrapperExample_1_ReactNativeWrapperExample_1Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* ReactNativeWrapperExample_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactNativeWrapperExample_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ReactNativeWrapperExample_1/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = ReactNativeWrapperExample_1/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ReactNativeWrapperExample_1/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ReactNativeWrapperExample_1/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ReactNativeWrapperExample_1/main.m; sourceTree = "<group>"; };
+		234C016B73C336794F507F95 /* libPods-ReactNativeWrapperExample_1.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeWrapperExample_1.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77A08D43544D1744E1AE0D67 /* Pods-ReactNativeWrapperExample_1-ReactNativeWrapperExample_1Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeWrapperExample_1-ReactNativeWrapperExample_1Tests.release.xcconfig"; path = "Target Support Files/Pods-ReactNativeWrapperExample_1-ReactNativeWrapperExample_1Tests/Pods-ReactNativeWrapperExample_1-ReactNativeWrapperExample_1Tests.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ReactNativeWrapperExample_1/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83B9E00B0960351A41CBF26C /* Pods-ReactNativeWrapperExample_1-ReactNativeWrapperExample_1Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeWrapperExample_1-ReactNativeWrapperExample_1Tests.debug.xcconfig"; path = "Target Support Files/Pods-ReactNativeWrapperExample_1-ReactNativeWrapperExample_1Tests/Pods-ReactNativeWrapperExample_1-ReactNativeWrapperExample_1Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		AAC51F94B015CA6D41C740EC /* Pods_ReactNativeWrapperExample_1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactNativeWrapperExample_1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D47EFF7CB31A030C20F7328E /* Pods-ReactNativeWrapperExample_1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeWrapperExample_1.debug.xcconfig"; path = "Target Support Files/Pods-ReactNativeWrapperExample_1/Pods-ReactNativeWrapperExample_1.debug.xcconfig"; sourceTree = "<group>"; };
 		DF43E2FB295938B300B50B8A /* Livelike-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Livelike-Bridging-Header.h"; sourceTree = "<group>"; };
 		DF43E2FC295938B300B50B8A /* SeparatedVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatedVideoViewController.swift; sourceTree = "<group>"; };
@@ -55,7 +57,9 @@
 		DF43E2FF295938B300B50B8A /* LiveLikeiOSViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveLikeiOSViewManager.swift; sourceTree = "<group>"; };
 		DF43E300295938B300B50B8A /* LiveLikeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveLikeView.swift; sourceTree = "<group>"; };
 		DF43E301295938B300B50B8A /* LiveLikeiOSViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveLikeiOSViewManager.m; sourceTree = "<group>"; };
+		DFF7F22A29B2222F00AE31E9 /* livelike_styles.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = livelike_styles.json; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F17F9E6682D1C0E8D3CDC6DE /* libPods-ReactNativeWrapperExample_1-ReactNativeWrapperExample_1Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeWrapperExample_1-ReactNativeWrapperExample_1Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB6B0964CA30B067BAA5474 /* Pods-ReactNativeWrapperExample_1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeWrapperExample_1.release.xcconfig"; path = "Target Support Files/Pods-ReactNativeWrapperExample_1/Pods-ReactNativeWrapperExample_1.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90618C8612C8FCF7088ACC33 /* Pods_ReactNativeWrapperExample_1_ReactNativeWrapperExample_1Tests.framework in Frameworks */,
+				ABAD4BAA517DEBA74E982F8D /* libPods-ReactNativeWrapperExample_1-ReactNativeWrapperExample_1Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,7 +76,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0ECF4B12440DC5464FEC9586 /* Pods_ReactNativeWrapperExample_1.framework in Frameworks */,
+				DFF7F22429B1D7DB00AE31E9 /* LiveLikeSwift in Frameworks */,
+				DFF7F22229B1D7DB00AE31E9 /* EngagementSDK in Frameworks */,
+				27E4433D4AF96EBB72A96F24 /* libPods-ReactNativeWrapperExample_1.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +105,7 @@
 		13B07FAE1A68108700A75B9A /* ReactNativeWrapperExample_1 */ = {
 			isa = PBXGroup;
 			children = (
+				DFF7F22929B2210C00AE31E9 /* Resources */,
 				DF43E2FA295938B300B50B8A /* Livelike */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
@@ -106,6 +113,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				DFF7F22A29B2222F00AE31E9 /* livelike_styles.json */,
 			);
 			name = ReactNativeWrapperExample_1;
 			sourceTree = "<group>";
@@ -114,8 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				AAC51F94B015CA6D41C740EC /* Pods_ReactNativeWrapperExample_1.framework */,
-				0CF362DD3A7955FA754F80AC /* Pods_ReactNativeWrapperExample_1_ReactNativeWrapperExample_1Tests.framework */,
+				234C016B73C336794F507F95 /* libPods-ReactNativeWrapperExample_1.a */,
+				F17F9E6682D1C0E8D3CDC6DE /* libPods-ReactNativeWrapperExample_1-ReactNativeWrapperExample_1Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -176,6 +184,13 @@
 			path = Livelike;
 			sourceTree = "<group>";
 		};
+		DFF7F22929B2210C00AE31E9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -188,6 +203,7 @@
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
 				0CFF3730BF96582A89071BC0 /* [CP] Embed Pods Frameworks */,
+				751BB162DBAA6E7290990340 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,12 +226,17 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				6CBA7F9CADEDD309DD43C33D /* [CP] Embed Pods Frameworks */,
+				35EA1BD744E21A7700896E30 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = ReactNativeWrapperExample_1;
+			packageProductDependencies = (
+				DFF7F22129B1D7DB00AE31E9 /* EngagementSDK */,
+				DFF7F22329B1D7DB00AE31E9 /* LiveLikeSwift */,
+			);
 			productName = ReactNativeWrapperExample_1;
 			productReference = 13B07F961A680F5B00A75B9A /* ReactNativeWrapperExample_1.app */;
 			productType = "com.apple.product-type.application";
@@ -246,6 +267,9 @@
 				Base,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
+			packageReferences = (
+				DFF7F22029B1D7DB00AE31E9 /* XCRemoteSwiftPackageReference "livelike-ios-sdk" */,
+			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -269,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				DFF7F22B29B2222F00AE31E9 /* livelike_styles.json in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +332,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReactNativeWrapperExample_1-ReactNativeWrapperExample_1Tests/Pods-ReactNativeWrapperExample_1-ReactNativeWrapperExample_1Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		35EA1BD744E21A7700896E30 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReactNativeWrapperExample_1/Pods-ReactNativeWrapperExample_1-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReactNativeWrapperExample_1/Pods-ReactNativeWrapperExample_1-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReactNativeWrapperExample_1/Pods-ReactNativeWrapperExample_1-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5BF6A853F0B7BE0E322D30C7 /* [CP] Check Pods Manifest.lock */ = {
@@ -368,6 +410,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReactNativeWrapperExample_1/Pods-ReactNativeWrapperExample_1-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		751BB162DBAA6E7290990340 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReactNativeWrapperExample_1-ReactNativeWrapperExample_1Tests/Pods-ReactNativeWrapperExample_1-ReactNativeWrapperExample_1Tests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReactNativeWrapperExample_1-ReactNativeWrapperExample_1Tests/Pods-ReactNativeWrapperExample_1-ReactNativeWrapperExample_1Tests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReactNativeWrapperExample_1-ReactNativeWrapperExample_1Tests/Pods-ReactNativeWrapperExample_1-ReactNativeWrapperExample_1Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -562,7 +621,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -634,7 +693,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -697,6 +756,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DFF7F22029B1D7DB00AE31E9 /* XCRemoteSwiftPackageReference "livelike-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@bitbucket.org:livelike/livelike-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DFF7F22129B1D7DB00AE31E9 /* EngagementSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DFF7F22029B1D7DB00AE31E9 /* XCRemoteSwiftPackageReference "livelike-ios-sdk" */;
+			productName = EngagementSDK;
+		};
+		DFF7F22329B1D7DB00AE31E9 /* LiveLikeSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DFF7F22029B1D7DB00AE31E9 /* XCRemoteSwiftPackageReference "livelike-ios-sdk" */;
+			productName = LiveLikeSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
 }
