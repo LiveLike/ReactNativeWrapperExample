@@ -21,6 +21,16 @@ class CustomWidgetTimeline: InteractiveWidgetTimelineViewController {
       super.init(contentSession: contentSession)
     }
   
+  override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+      return 20
+  }
+  
+  override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    tableView.backgroundColor = .gray
+    let separatorView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 20))
+    return separatorView
+   }
+  
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
@@ -37,8 +47,8 @@ class SeparatedVideoViewController: UIViewController {
   // MARK: EngagementSDK Properties
   private lazy var timelineVC: CustomWidgetTimeline = {
     let vc = CustomWidgetTimeline(contentSession: Livelike.DataProvider.shared.contentSession!)
-      vc.view.translatesAutoresizingMaskIntoConstraints = false
-      return vc
+    vc.view.translatesAutoresizingMaskIntoConstraints = false
+    return vc
   }()
   
   init() {
@@ -78,9 +88,11 @@ class SeparatedVideoViewController: UIViewController {
 
 extension SeparatedVideoViewController {
   private func setUpEngagementSDKLayout() {
+    timelineVC.view.backgroundColor = .gray
     addChild(timelineVC)
     timelineVC.didMove(toParent: self)
     view.addSubview(timelineVC.view)
+    timelineVC.view.backgroundColor = .gray
 
   
     NSLayoutConstraint.activate([

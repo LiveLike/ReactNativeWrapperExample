@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import {NativeModules, requireNativeComponent} from 'react-native';
-const LiveLikeiOSView = requireNativeComponent("LiveLikeiOSView")
+const LandscapeWODView = requireNativeComponent("LandscapeWODView")
 const Livelike = NativeModules.Livelike ? NativeModules.Livelike : new Proxy({}, {
     get() {
       throw new Error(LINKING_ERROR);
@@ -19,13 +19,41 @@ export const RNLiveLikeiOSView = () => {
           ref.current.setNativeProps({
             programId: programId,
           });
+
+          
+          //Test Code
+          setTimeout(() => {
+            ref.current.setNativeProps({
+              toggleWidget: 1,
+            });
+          }, 0);
+
+          //Test Code Temp Code for testing.. these props should be set on btn click
+          setTimeout(() => {
+            ref.current.setNativeProps({
+              toggleWidget: 1,
+            });
+          }, 10000);
+
+          //Test Code
+          setTimeout(() => {
+            ref.current.setNativeProps({
+              toggleWidget: 1,
+            });
+          }, 10000);
+
+          setTimeout(() => {
+            ref.current.setNativeProps({
+              toggleWidget: 1,
+            });
+          }, 10000);
         })();
     }, [])
   return (
       
-      <LiveLikeiOSView  style={{
+      <LandscapeWODView  style={{
         flex: 1
       }}
-        ref={ref}></LiveLikeiOSView>
+        ref={ref}></LandscapeWODView>
     )
 };
