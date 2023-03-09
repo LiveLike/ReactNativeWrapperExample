@@ -3,6 +3,7 @@ import EngagementSDK
 import UIKit
 
 class LandscapeTimelineViewController: UIViewController, ContentSessionDelegate {
+  
   func playheadTimeSource(_ session: ContentSession) -> Date? {
       return Date()
   }
@@ -23,6 +24,9 @@ class LandscapeTimelineViewController: UIViewController, ContentSessionDelegate 
     if self.isValid(widget: widget){
       DispatchQueue.main.async { [weak self] in
         let nextWidget = DefaultWidgetFactory.makeWidget(from: widget)
+        if let themeFromJson = self?.themeFromJson{
+          nextWidget?.theme = themeFromJson
+        }
         self?.hideCurrentWidget()
         self?.correctWidget = nextWidget
         self?.presentCurrentWidget()
@@ -31,6 +35,27 @@ class LandscapeTimelineViewController: UIViewController, ContentSessionDelegate 
     
   }
   
+  
+  var themeFromJson: Theme? = nil
+  init() {
+    if let path = Bundle.main.path(forResource: "livelike_styles", ofType: "json") {
+      do {
+        let jsonData = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+        let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
+        themeFromJson = try! Theme.create(fromJSONObject: jsonObject)
+      } catch {
+        // handle error
+        print("Unable to create theme")
+      }
+    }
+    super.init(nibName: nil, bundle: nil)
+  }
+
+
+  required init?(coder aDecoder: NSCoder) {
+      super.init(coder: aDecoder)
+  }
+
   
   private let  interactiveTimelineWidgetViewDelegate = InteractiveTimelineWidgetViewDelegate()
   private var correctWidget: Widget? = nil
@@ -55,6 +80,10 @@ class LandscapeTimelineViewController: UIViewController, ContentSessionDelegate 
           self?.correctWidget = self?.findWidgetWithLandscape(widgets: widgets)
           if self?.correctWidget == nil {
             self?.findLastPostedLandscapeWidgetInNext()
+          } else {
+            if let themeFromJson = self?.themeFromJson{
+              self?.correctWidget?.theme = themeFromJson
+            }
           }
         }
         
