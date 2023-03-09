@@ -8,7 +8,7 @@ const Livelike = NativeModules.Livelike ? NativeModules.Livelike : new Proxy({},
   });
 
 const clientId = "vGgUtbZTQWW6C6ROKSqRAO9wdrZaGffXEzYIAxwQ"
-const programId = "285e4d20-b60c-415d-9624-394646b4471a"
+const programId = "47434d4e-a1ba-4d53-8503-df4401c39341"
 
 export const RNLiveLikeiOSView = () => {
     const ref = useRef(null);
@@ -19,15 +19,6 @@ export const RNLiveLikeiOSView = () => {
           ref.current.setNativeProps({
             programId: programId,
           });
-
-          
-          //Test Code
-          setTimeout(() => {
-            ref.current.setNativeProps({
-              toggleWidget: 1,
-            });
-          }, 0);
-
           //Test Code Temp Code for testing.. these props should be set on btn click
           setTimeout(() => {
             ref.current.setNativeProps({
@@ -35,18 +26,7 @@ export const RNLiveLikeiOSView = () => {
             });
           }, 10000);
 
-          //Test Code
-          setTimeout(() => {
-            ref.current.setNativeProps({
-              toggleWidget: 1,
-            });
-          }, 10000);
-
-          setTimeout(() => {
-            ref.current.setNativeProps({
-              toggleWidget: 1,
-            });
-          }, 10000);
+          
         })();
     }, [])
   return (

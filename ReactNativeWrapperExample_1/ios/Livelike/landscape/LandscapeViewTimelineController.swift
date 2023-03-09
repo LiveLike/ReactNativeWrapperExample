@@ -7,10 +7,6 @@ class LandscapeTimelineViewController: UIViewController, ContentSessionDelegate 
       return Date()
   }
   
-  func widget(_ session: ContentSession, didBecomeReady widget: Widget) {
-      print("*** didBecomeReady")
-  }
-  
   func session(_ session: ContentSession, didChangeStatus status: SessionStatus) {
     
   }
@@ -24,34 +20,27 @@ class LandscapeTimelineViewController: UIViewController, ContentSessionDelegate 
   }
   
   func contentSession(_ session: ContentSession, didReceiveWidget widget: WidgetModel) {
+    if self.isValid(widget: widget){
+      DispatchQueue.main.async { [weak self] in
+        let nextWidget = DefaultWidgetFactory.makeWidget(from: widget)
+        self?.hideCurrentWidget()
+        self?.correctWidget = nextWidget
+        self?.presentCurrentWidget()
+      }
+    }
     
   }
   
   
   private let  interactiveTimelineWidgetViewDelegate = InteractiveTimelineWidgetViewDelegate()
   private var correctWidget: Widget? = nil
-  private var widgetToggle: Bool = false
-  private let widgetContainer: UIView = {
-      let widgetContainer = UIView()
-      widgetContainer.translatesAutoresizingMaskIntoConstraints = false
-      return widgetContainer
-  }()
-  
-  
-  init() {
-    super.init(nibName: nil, bundle: nil)
-  }
-  
-  
-  // MARK: - UI Elements
-  
-  required init?(coder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
+  private var widgetToggle: Bool = true
+  private let queue = DispatchQueue(label: "com.example.myQueue")
+
   
   func setContentSession() {
     findLastPostedLandscapeWidgetInFirstPage()
-    //addListenerForNewWidgets()
+    addListenerForNewWidgets()
   }
   
   func addListenerForNewWidgets(){
@@ -76,93 +65,119 @@ class LandscapeTimelineViewController: UIViewController, ContentSessionDelegate 
   }
   
   func presentCurrentWidget(){
+    guard let correctWidget = self.correctWidget else { return }
+    
     DispatchQueue.main.async {
-      if self.correctWidget != nil {
-        self.addChild(self.correctWidget!)
-        self.widgetContainer.addSubview(self.correctWidget!.view)
-        self.correctWidget!.didMove(toParent: self)
-        self.correctWidget!.delegate = self.interactiveTimelineWidgetViewDelegate
-        self.correctWidget?.moveToNextState()
-        
-        NSLayoutConstraint.activate([
-          self.correctWidget!.view.topAnchor.constraint(equalTo: self.widgetContainer.topAnchor),
-          self.correctWidget!.view.leadingAnchor.constraint(equalTo: self.widgetContainer.leadingAnchor),
-          self.correctWidget!.view.trailingAnchor.constraint(equalTo: self.widgetContainer.trailingAnchor),
-          self.correctWidget!.view.heightAnchor.constraint(lessThanOrEqualTo: self.widgetContainer.heightAnchor)
-        ])
-      }
+      self.addChild(correctWidget)
+      self.view.addSubview(correctWidget.view)
+      correctWidget.didMove(toParent: self)
+      correctWidget.delegate = self.interactiveTimelineWidgetViewDelegate
+      correctWidget.moveToNextState()
+      
+      correctWidget.view.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 16).isActive = true
+      correctWidget.view.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16).isActive = true
+      correctWidget.view.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -16).isActive = true
+
     }
   }
   
-  func toggleWidgetVisibility(){
-    if(widgetToggle){
-      self.presentCurrentWidget()
-    } else{
-      DispatchQueue.main.async {
-        self.correctWidget?.view.removeFromSuperview()
-        self.correctWidget?.removeFromParent()
-      }
+  func toggleWidgetBool() {
+    queue.sync {
+      self.widgetToggle.toggle()
     }
-    widgetToggle.toggle()
+  }
+
+  func getWidgetToggleBool() -> Bool {
+    var result = false
+    queue.sync {
+      result = self.widgetToggle
+    }
+    return result
+  }
+  
+  func hideCurrentWidget() {
+      guard let correctWidget = self.correctWidget else { return }
+      
+      DispatchQueue.main.async {
+          correctWidget.view.removeFromSuperview()
+          correctWidget.removeFromParent()
+      }
+  }
+
+  func toggleWidgetVisibility() {
+    if self.getWidgetToggleBool() {
+          self.presentCurrentWidget()
+      } else {
+          self.hideCurrentWidget()
+      }
+      
+    self.toggleWidgetBool()
   }
   
   func findWidgetWithLandscape(widgets: [Widget]) -> Widget? {
     for widget in widgets {
       if let widgetModel = widget.widgetModel {
-        switch widgetModel {
-        case .alert(let model):
-          if model.widgetAttributes.first(where: {$0.key == "landscape" && $0.value == "true"}) != nil {
-            return widget
-          }
-          
-        case .cheerMeter(let model):
-          if model.widgetAttributes.first(where: {$0.key == "landscape" && $0.value == "true"}) != nil {
-            return widget
-          }
-          
-        case .quiz(let model):
-          if model.widgetAttributes.first(where: {$0.key == "landscape" && $0.value == "true"}) != nil {
-            return widget
-          }
-          
-        case .prediction(let model):
-          if model.widgetAttributes.first(where: {$0.key == "landscape" && $0.value == "true"}) != nil {
-            return widget
-          }
-          
-        case .predictionFollowUp(let model):
-          if model.widgetAttributes.first(where: {$0.key == "landscape" && $0.value == "true"}) != nil {
-            return widget
-          }
-          
-        case .poll(let model):
-          if model.widgetAttributes.first(where: {$0.key == "landscape" && $0.value == "true"}) != nil {
-            return widget
-          }
-          
-        case .imageSlider(let model):
-          if model.widgetAttributes.first(where: {$0.key == "landscape" && $0.value == "true"}) != nil {
-            return widget
-          }
-          
-        case .socialEmbed(let model):
-          if model.widgetAttributes.first(where: {$0.key == "landscape" && $0.value == "true"}) != nil {
-            return widget
-          }
-          
-        case .videoAlert(let model):
-          if model.widgetAttributes.first(where: {$0.key == "landscape" && $0.value == "true"}) != nil {
-            return widget
-          }
-          
-        default:
-          break
+        if(isValid(widget: widgetModel)){
+          return widget
         }
       }
     }
     return nil
   }
   
+  
+  func isValid(widget:WidgetModel)-> Bool{
+    switch widget{
+    case .alert(let model):
+      if model.widgetAttributes.first(where: {$0.key == "landscape" && $0.value == "true"}) != nil {
+        return true
+      }
+      
+    case .cheerMeter(let model):
+      if model.widgetAttributes.first(where: {$0.key == "landscape" && $0.value == "true"}) != nil {
+        return true
+      }
+      
+    case .quiz(let model):
+      if model.widgetAttributes.first(where: {$0.key == "landscape" && $0.value == "true"}) != nil {
+        return true
+      }
+      
+    case .prediction(let model):
+      if model.widgetAttributes.first(where: {$0.key == "landscape" && $0.value == "true"}) != nil {
+        return true
+      }
+      
+    case .predictionFollowUp(let model):
+      if model.widgetAttributes.first(where: {$0.key == "landscape" && $0.value == "true"}) != nil {
+        return true
+      }
+      
+    case .poll(let model):
+      if model.widgetAttributes.first(where: {$0.key == "landscape" && $0.value == "true"}) != nil {
+        return true
+      }
+      
+    case .imageSlider(let model):
+      if model.widgetAttributes.first(where: {$0.key == "landscape" && $0.value == "true"}) != nil {
+        return true
+      }
+      
+    case .socialEmbed(let model):
+      if model.widgetAttributes.first(where: {$0.key == "landscape" && $0.value == "true"}) != nil {
+        return true
+      }
+      
+    case .videoAlert(let model):
+      if model.widgetAttributes.first(where: {$0.key == "landscape" && $0.value == "true"}) != nil {
+        return true
+      }
+      
+    default:
+      break
+    }
+    return false
+  }
   
   func findLastPostedLandscapeWidgetInNext(){
     Livelike.DataProvider.shared.contentSession?.getPostedWidgets(page: .next) { [weak self] result in
@@ -179,15 +194,6 @@ class LandscapeTimelineViewController: UIViewController, ContentSessionDelegate 
         print("Error While loading widgets: \(error.localizedDescription)")
       }
     }
-  }
-  
-  
-  // MARK: - UIViewController Life Cycle
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    view.addSubview(widgetContainer)
-    NSLayoutConstraint.activate([
-      widgetContainer.centerYAnchor.constraint(equalTo: view.centerYAnchor)])
   }
   
   

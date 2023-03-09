@@ -38,7 +38,6 @@ class LandscapeWODView: UIView {
   private func embed() {
     
     let vc = LandscapeTimelineViewController()
-    vc.view.backgroundColor = .gray
     let parentVC = parentViewController
     parentVC?.addChild(vc)
     addSubview(vc.view)
