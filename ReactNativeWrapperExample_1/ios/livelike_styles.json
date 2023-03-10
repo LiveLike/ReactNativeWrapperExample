@@ -479,8 +479,8 @@
                 "fontColor": "FFFFFF",
                 "background": {
                     "colors": [
-                        "1D1D1D",
-                        "1D1D1D"
+                        "EFF23E",
+                        "1DCF00"
                     ],
                     "direction": 90,
                     "format": "uniformGradient"
@@ -586,9 +586,14 @@
                 "borderColor": "DEDEDE38",
                 "fontColor": "FFFFFF",
                 "background": {
-                    "color": "1D1D1D",
-                    "format": "fill"
+                    "colors": [
+                        "3C1EFF",
+                        "FF2D2D"
+                    ],
+                    "direction": 90,
+                    "format": "uniformGradient"
                 }
+                
             },
             "resultsTrackLeft": {
                 "borderRadius": [
@@ -618,8 +623,12 @@
                 "borderColor": "DEDEDE38",
                 "fontColor": "FFFFFF",
                 "background": {
-                    "color": "1D1D1D",
-                    "format": "fill"
+                    "colors": [
+                        "FF2D2D",
+                        "3C1EFF"
+                    ],
+                    "direction": 90,
+                    "format": "uniformGradient"
                 }
             },
             "marker": {
