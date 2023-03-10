@@ -515,7 +515,7 @@
                 "fontColor": "FFFFFF",
                 "background": {
                     "colors": [
-                        "EFF23E",
+                        "1DCF00",
                         "1DCF00"
                     ],
                     "direction": 100,
@@ -551,7 +551,7 @@
                 "fontColor": "FFFFFF",
                 "background": {
                     "colors": [
-                        "EFF23E",
+                        "1DCF00",
                         "1DCF00"
                     ],
                     "direction": 100,
@@ -586,7 +586,7 @@
                 "borderColor": "DEDEDE38",
                 "fontColor": "FFFFFF",
                 "background": {
-                    "color": "1D1D1D",
+                    "color": "1DCF00",
                     "format": "fill"
                 }
             },
