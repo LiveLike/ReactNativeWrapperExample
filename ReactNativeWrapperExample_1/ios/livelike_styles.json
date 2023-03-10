@@ -478,12 +478,8 @@
                 "borderColor": "DEDEDE38",
                 "fontColor": "FFFFFF",
                 "background": {
-                    "colors": [
-                        "EFF23E",
-                        "1DCF00"
-                    ],
-                    "direction": 90,
-                    "format": "uniformGradient"
+                    "color": "1D1D1D",
+                    "format": "fill"
                 }
             },
             "interactiveTrackRight": {
