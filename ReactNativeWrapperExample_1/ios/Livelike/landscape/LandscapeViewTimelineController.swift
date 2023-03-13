@@ -97,6 +97,7 @@ class LandscapeTimelineViewController: UIViewController, ContentSessionDelegate 
     guard let correctWidget = self.correctWidget else { return }
     
     DispatchQueue.main.async {
+      self.parent?.view.isHidden = false
       self.addChild(correctWidget)
       self.view.addSubview(correctWidget.view)
       correctWidget.didMove(toParent: self)
@@ -128,6 +129,7 @@ class LandscapeTimelineViewController: UIViewController, ContentSessionDelegate 
       guard let correctWidget = self.correctWidget else { return }
       
       DispatchQueue.main.async {
+          self.parent?.view.isHidden = true
           correctWidget.view.removeFromSuperview()
           correctWidget.removeFromParent()
       }

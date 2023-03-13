@@ -26,7 +26,6 @@ class LandscapeWODView: UIView {
   
   override func layoutSubviews() {
     super.layoutSubviews()
-    
     if landscapeTimelineViewController == nil {
       embed()
     } else {
@@ -36,10 +35,11 @@ class LandscapeWODView: UIView {
   }
   
   private func embed() {
-    
     let vc = LandscapeTimelineViewController()
+    vc.view.backgroundColor = .yellow
     let parentVC = parentViewController
     parentVC?.addChild(vc)
+    parentVC?.view.isHidden = true
     addSubview(vc.view)
     vc.view.frame = bounds
     vc.didMove(toParent: parentVC)
