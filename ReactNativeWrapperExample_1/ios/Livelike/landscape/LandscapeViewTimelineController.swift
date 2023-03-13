@@ -37,6 +37,9 @@ class LandscapeTimelineViewController: UIViewController, ContentSessionDelegate 
   
   
   var themeFromJson: Theme? = nil
+  var lastShownWidgetId: String? = nil
+
+  
   init() {
     if let path = Bundle.main.path(forResource: "livelike_styles", ofType: "json") {
       do {
@@ -102,7 +105,11 @@ class LandscapeTimelineViewController: UIViewController, ContentSessionDelegate 
       self.view.addSubview(correctWidget.view)
       correctWidget.didMove(toParent: self)
       correctWidget.delegate = self.interactiveTimelineWidgetViewDelegate
-      correctWidget.moveToNextState()
+      if(correctWidget.id != self.lastShownWidgetId){
+        correctWidget.moveToNextState()
+        self.lastShownWidgetId = correctWidget.id
+      }
+      
       
       correctWidget.view.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 16).isActive = true
       correctWidget.view.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16).isActive = true
@@ -129,9 +136,9 @@ class LandscapeTimelineViewController: UIViewController, ContentSessionDelegate 
       guard let correctWidget = self.correctWidget else { return }
       
       DispatchQueue.main.async {
-          self.parent?.view.isHidden = true
-          correctWidget.view.removeFromSuperview()
-          correctWidget.removeFromParent()
+        self.parent?.view.isHidden = true
+        correctWidget.view.removeFromSuperview()
+        correctWidget.removeFromParent()
       }
   }
 
