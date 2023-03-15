@@ -8,11 +8,16 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.facebook.react.bridge.LifecycleEventListener
 import com.facebook.react.bridge.ReactApplicationContext
+import com.facebook.react.bridge.ReactContext
 import com.facebook.react.uimanager.ThemedReactContext
+import com.facebook.react.uimanager.events.RCTEventEmitter
 import com.google.gson.JsonParser
 import com.livelike.demo.LiveLikeManager
 import com.livelike.engagementsdk.LiveLikeContentSession
 import com.livelike.engagementsdk.LiveLikeEngagementTheme
+import com.livelike.engagementsdk.LiveLikeWidget
+import com.livelike.engagementsdk.chat.data.remote.LiveLikePagination
+import com.livelike.engagementsdk.publicapis.LiveLikeCallback
 import com.livelike.engagementsdk.widget.timeline.IntractableWidgetTimelineViewModel
 import com.livelike.engagementsdk.widget.timeline.WidgetTimeLineViewModel
 import com.livelike.engagementsdk.widget.timeline.WidgetsTimeLineView
@@ -111,11 +116,42 @@ class LiveLikeWidgetTimelineView(
     override fun onHostDestroy() {
         re_render = false
         Choreographer.getInstance().removeFrameCallback { this.fallback }
+        contentSession?.widgetStream?.unsubscribe(this)
         this.contentSession = null
     }
 
     fun updateContentSession(contentSession: LiveLikeContentSession) {
         this.contentSession = contentSession
         attachViewAndSession()
+        checkWidgetCount()
+    }
+
+    fun checkWidgetCount() {
+        this.contentSession?.getPublishedWidgets(LiveLikePagination.FIRST, object : LiveLikeCallback<List<LiveLikeWidget>>() {
+            override fun onResponse(result: List<LiveLikeWidget>?, error: String?) {
+                if(result == null || result.isEmpty()){
+                    fireShowEmptyListEvent()
+                }
+            }
+        })
+
+        contentSession?.widgetStream?.subscribe(this) {
+            it?.let {
+                fireHideEmptyListEvent()
+                contentSession?.widgetStream?.unsubscribe(this)
+            }
+        }
+    }
+
+    fun fireShowEmptyListEvent(){
+        val reactContext = this.getContext() as ReactContext;
+        reactContext.getJSModule(RCTEventEmitter::class.java)
+            .receiveEvent(this.getId(), LiveLikeWidgetViewManager.EVENT_SHOW_EMPTY_TIMELINE, null)
+    }
+
+    fun fireHideEmptyListEvent(){
+        val reactContext = this.getContext() as ReactContext;
+        reactContext.getJSModule(RCTEventEmitter::class.java)
+            .receiveEvent(this.getId(), LiveLikeWidgetViewManager.EVENT_HIDE_EMPTY_TIMELINE, null)
     }
 }

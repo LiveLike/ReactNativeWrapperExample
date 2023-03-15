@@ -9,11 +9,13 @@ import com.livelike.demo.LiveLikeManager
 
 
 class LiveLikeWidgetViewManager(val applicationContext: ReactApplicationContext) :
-    ViewGroupManager<LiveLikeWidgetTimelineLandscapeView>() {
+    ViewGroupManager<LiveLikeWidgetTimelineView>() {
 
 
     companion object {
         const val EVENT_WIDGET_READY = "widgetReady"
+        const val EVENT_SHOW_EMPTY_TIMELINE = "showEmptyTimeline"
+        const val EVENT_HIDE_EMPTY_TIMELINE = "hideEmptyTimeline"
     }
 
     val REACT_CLASS = "LiveLikeWidgetView"
