@@ -14,7 +14,7 @@ RCT_EXTERN_METHOD(startContentSession:(NSString)programID
                  withRejecter:(RCTPromiseRejectBlock)reject)
 
 - (NSArray<NSString *> *)supportedEvents {
-  return @[@"onMessageReceived", @"onMessageDeleted", @"onWidgetReceived", @"onPollVotesChange", @"onDebugLog"];
+  return @[@"showNoWidgetView", @"hideNoWidgetView"];
 }
 + (BOOL)requiresMainQueueSetup
 {

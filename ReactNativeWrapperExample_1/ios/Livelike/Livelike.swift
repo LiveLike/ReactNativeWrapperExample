@@ -19,23 +19,25 @@ class Livelike: RCTEventEmitter, AccessTokenStorage {
   
     @objc
     override func supportedEvents() -> [String]! {
-        return ["onMessageReceived", "onMessageDeleted", "onWidgetReceived", "onPollVotesChange", "onDebugLog"];
+        return ["showNoWidgetView","hideNoWidgetView"];
     }
     
     
     var accessToken: String = ""
     var currentAccessToken: String?
+    static var shared:Livelike? = nil
     
-  struct DataProvider {
-    static var shared = DataProvider()
-    var engagementSDK: EngagementSDK!
-    var contentSession: ContentSession?
-    private init() {
+    struct DataProvider {
+      static var shared = DataProvider()
+      var engagementSDK: EngagementSDK!
+      var contentSession: ContentSession?
+      private init() {
+      }
     }
-  }
   
     override init() {
-        super.init()
+      super.init()
+      Livelike.shared = self
     }
     
 
@@ -71,7 +73,11 @@ class Livelike: RCTEventEmitter, AccessTokenStorage {
         DataProvider.shared.contentSession = nil
         resolve(true)
     }
-  
+
+  func sendEventToRN(event:String){
+    self.sendEvent(withName: event, body: [])
+  }
+    
 }
 
 

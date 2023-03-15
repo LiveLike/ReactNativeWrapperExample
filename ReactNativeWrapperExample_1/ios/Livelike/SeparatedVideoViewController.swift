@@ -5,6 +5,7 @@ import UIKit
 class CustomWidgetTimeline: InteractiveWidgetTimelineViewController {
    
   var themeFromJson: Theme? = nil
+  var isNoWidgetViewUp: Bool = false
   
   override init(contentSession:ContentSession) {
       
@@ -20,6 +21,23 @@ class CustomWidgetTimeline: InteractiveWidgetTimelineViewController {
       }
       super.init(contentSession: contentSession)
     }
+  
+  open override func didReceiveNewWidget(_ widgetModel: WidgetModel) -> WidgetModel? {
+    if(isNoWidgetViewUp){
+      Livelike.shared?.sendEventToRN(event:"hideNoWidgetView")
+      self.isNoWidgetViewUp = false
+    }
+    return widgetModel
+  }
+  
+  override func didLoadInitialWidgets(_ widgetModels: [WidgetModel]) -> [WidgetModel] {
+    
+    if(widgetModels.count == 0){
+      Livelike.shared?.sendEventToRN(event:"showNoWidgetView")
+      self.isNoWidgetViewUp = true
+    }
+    return super.didLoadInitialWidgets(widgetModels)
+  }
   
   override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
       return 20
