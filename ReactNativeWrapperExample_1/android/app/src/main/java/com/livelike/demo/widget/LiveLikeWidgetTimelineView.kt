@@ -2,6 +2,7 @@ package com.livelike.demo.widget
 
 import android.view.Choreographer
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.Toast
@@ -24,7 +25,6 @@ import com.livelike.engagementsdk.widget.timeline.WidgetsTimeLineView
 import com.reactnativewrapperexample_1.R
 import java.io.IOException
 import java.io.InputStream
-import com.livelike.utils.Result
 
 class LiveLikeWidgetTimelineView(
     val context: ThemedReactContext,
@@ -37,7 +37,7 @@ class LiveLikeWidgetTimelineView(
     var fallback: Choreographer.FrameCallback;
 
     init {
-        this.applicationContext.addLifecycleEventListener(this)
+        this.context.addLifecycleEventListener(this)
         this.fallback = Choreographer.FrameCallback() {
             manuallyLayoutChildren();
             viewTreeObserver.dispatchOnGlobalLayout();
@@ -72,7 +72,9 @@ class LiveLikeWidgetTimelineView(
                     sdk
                 )
             }
-
+            timeLineView?.findViewById<View>(R.id.timeline_view)?.findViewById<View>(R.id.timeline_rv)?.findViewById<View>(R.id.timeline_snap_live)?.layoutParams?.height  = 0
+            //timeLineView?.binding_field.timelineSnapLive?.layoutParams?.height  = 0
+            //timeLineView?.findViewById<View>(R.id.timeline_snap_live)?.layoutParams?.height  = 0
             timeLineView?.setSeparator(ContextCompat.getDrawable(applicationContext, R.drawable.white_separator))
             try {
                 val inputStream: InputStream = applicationContext.assets.open("livelike_styles.json")
@@ -82,7 +84,7 @@ class LiveLikeWidgetTimelineView(
                 val theme = String(buffer)
                 val result =
                     LiveLikeEngagementTheme.instanceFrom(JsonParser.parseString(theme).asJsonObject)
-                if (result is Result.Success) {
+                if (result is com.livelike.utils.Result.Success) {
                     timeLineView?.applyTheme(result.data)
                 } else {
                     Toast.makeText(

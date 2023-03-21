@@ -20,6 +20,10 @@
 		DF43E305295938B300B50B8A /* LiveLikeiOSViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43E2FF295938B300B50B8A /* LiveLikeiOSViewManager.swift */; };
 		DF43E306295938B300B50B8A /* LiveLikeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43E300295938B300B50B8A /* LiveLikeView.swift */; };
 		DF43E307295938B300B50B8A /* LiveLikeiOSViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF43E301295938B300B50B8A /* LiveLikeiOSViewManager.m */; };
+		DFC9568729B75700005FEED8 /* LandscapeWODView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC9568629B756FF005FEED8 /* LandscapeWODView.swift */; };
+		DFC9568929B7573B005FEED8 /* LandscapeWODViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC9568829B7573B005FEED8 /* LandscapeWODViewManager.swift */; };
+		DFC9568B29B75769005FEED8 /* LandscapeWODViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC9568A29B75769005FEED8 /* LandscapeWODViewManager.m */; };
+		DFC9568D29B758F1005FEED8 /* LandscapeViewTimelineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC9568C29B758F1005FEED8 /* LandscapeViewTimelineController.swift */; };
 		DFF7F22229B1D7DB00AE31E9 /* EngagementSDK in Frameworks */ = {isa = PBXBuildFile; productRef = DFF7F22129B1D7DB00AE31E9 /* EngagementSDK */; };
 		DFF7F22429B1D7DB00AE31E9 /* LiveLikeSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DFF7F22329B1D7DB00AE31E9 /* LiveLikeSwift */; };
 		DFF7F22B29B2222F00AE31E9 /* livelike_styles.json in Resources */ = {isa = PBXBuildFile; fileRef = DFF7F22A29B2222F00AE31E9 /* livelike_styles.json */; };
@@ -57,6 +61,10 @@
 		DF43E2FF295938B300B50B8A /* LiveLikeiOSViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveLikeiOSViewManager.swift; sourceTree = "<group>"; };
 		DF43E300295938B300B50B8A /* LiveLikeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveLikeView.swift; sourceTree = "<group>"; };
 		DF43E301295938B300B50B8A /* LiveLikeiOSViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveLikeiOSViewManager.m; sourceTree = "<group>"; };
+		DFC9568629B756FF005FEED8 /* LandscapeWODView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeWODView.swift; sourceTree = "<group>"; };
+		DFC9568829B7573B005FEED8 /* LandscapeWODViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeWODViewManager.swift; sourceTree = "<group>"; };
+		DFC9568A29B75769005FEED8 /* LandscapeWODViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LandscapeWODViewManager.m; sourceTree = "<group>"; };
+		DFC9568C29B758F1005FEED8 /* LandscapeViewTimelineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeViewTimelineController.swift; sourceTree = "<group>"; };
 		DFF7F22A29B2222F00AE31E9 /* livelike_styles.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = livelike_styles.json; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F17F9E6682D1C0E8D3CDC6DE /* libPods-ReactNativeWrapperExample_1-ReactNativeWrapperExample_1Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeWrapperExample_1-ReactNativeWrapperExample_1Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +181,7 @@
 		DF43E2FA295938B300B50B8A /* Livelike */ = {
 			isa = PBXGroup;
 			children = (
+				DFC9568529B736EC005FEED8 /* landscape */,
 				DF43E2FB295938B300B50B8A /* Livelike-Bridging-Header.h */,
 				DF43E2FC295938B300B50B8A /* SeparatedVideoViewController.swift */,
 				DF43E2FD295938B300B50B8A /* Livelike.swift */,
@@ -182,6 +191,17 @@
 				DF43E301295938B300B50B8A /* LiveLikeiOSViewManager.m */,
 			);
 			path = Livelike;
+			sourceTree = "<group>";
+		};
+		DFC9568529B736EC005FEED8 /* landscape */ = {
+			isa = PBXGroup;
+			children = (
+				DFC9568629B756FF005FEED8 /* LandscapeWODView.swift */,
+				DFC9568829B7573B005FEED8 /* LandscapeWODViewManager.swift */,
+				DFC9568A29B75769005FEED8 /* LandscapeWODViewManager.m */,
+				DFC9568C29B758F1005FEED8 /* LandscapeViewTimelineController.swift */,
+			);
+			path = landscape;
 			sourceTree = "<group>";
 		};
 		DFF7F22929B2210C00AE31E9 /* Resources */ = {
@@ -464,10 +484,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF43E302295938B300B50B8A /* SeparatedVideoViewController.swift in Sources */,
+				DFC9568D29B758F1005FEED8 /* LandscapeViewTimelineController.swift in Sources */,
+				DFC9568929B7573B005FEED8 /* LandscapeWODViewManager.swift in Sources */,
+				DFC9568729B75700005FEED8 /* LandscapeWODView.swift in Sources */,
 				DF43E307295938B300B50B8A /* LiveLikeiOSViewManager.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				DF43E303295938B300B50B8A /* Livelike.swift in Sources */,
 				DF43E305295938B300B50B8A /* LiveLikeiOSViewManager.swift in Sources */,
+				DFC9568B29B75769005FEED8 /* LandscapeWODViewManager.m in Sources */,
 				DF43E306295938B300B50B8A /* LiveLikeView.swift in Sources */,
 				DF43E304295938B300B50B8A /* Livelike.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,

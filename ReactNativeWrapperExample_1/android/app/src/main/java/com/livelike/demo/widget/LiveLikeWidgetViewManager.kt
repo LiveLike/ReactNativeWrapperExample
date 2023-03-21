@@ -37,14 +37,17 @@ class LiveLikeWidgetViewManager(val applicationContext: ReactApplicationContext)
 
     override fun getExportedCustomDirectEventTypeConstants(): MutableMap<String, Any>? {
         var map = HashMap<String, Any>()
+        //,"registrationName","showEmptyTimeline","registrationName","showEmptyTimeline"
         map.put(EVENT_WIDGET_READY, MapBuilder.of("registrationName", "onReady"));
+        map.put(EVENT_SHOW_EMPTY_TIMELINE, MapBuilder.of("registrationName", "showEmptyTimeline"));
+        map.put(EVENT_HIDE_EMPTY_TIMELINE, MapBuilder.of("registrationName", "hideEmptyTimeline"));
         return map;
     }
     /**
      * Handle "create" command (called from JS) and call createFragment method
      */
     override fun receiveCommand(
-        root: LiveLikeWidgetTimelineLandscapeView,
+        root: LiveLikeWidgetTimelineView,
         commandId: String,
         args: ReadableArray?
     ) {
@@ -59,28 +62,30 @@ class LiveLikeWidgetViewManager(val applicationContext: ReactApplicationContext)
         }
     }
 
-    private fun hideWidget(view:LiveLikeWidgetTimelineLandscapeView) {
-        view.hideWidget()
+    private fun hideWidget(view:LiveLikeWidgetTimelineView) {
+        //view.hideWidget()
     }
 
-    private fun showWidget(view:LiveLikeWidgetTimelineLandscapeView) {
-        view.displayLastWidget()
+    private fun showWidget(view:LiveLikeWidgetTimelineView) {
+        //view.displayLastWidget()
     }
 
-    override fun createViewInstance(reactContext: ThemedReactContext): LiveLikeWidgetTimelineLandscapeView {
-        return LiveLikeWidgetTimelineLandscapeView(reactContext, applicationContext);
+    override fun createViewInstance(reactContext: ThemedReactContext): LiveLikeWidgetTimelineView {
+        return LiveLikeWidgetTimelineView(reactContext, applicationContext);
     }
 
-   fun setProgramIdFrmArgs(view: LiveLikeWidgetTimelineLandscapeView,args: ReadableArray?) {
+   fun setProgramIdFrmArgs(view: LiveLikeWidgetTimelineView,args: ReadableArray?) {
         val session = args?.getString(1)?.let { LiveLikeManager.getContentSession(it) }
         session?.let {
-            val configType = args?.getString(2)
-            view.updateContentSession(it,configType)
+            //val configType = args?.getString(2)
+            view.updateContentSession(it)
+            println("***1"+view)
         }
     }
 
-    override fun onDropViewInstance(view: LiveLikeWidgetTimelineLandscapeView) {
+    override fun onDropViewInstance(view: LiveLikeWidgetTimelineView) {
         view.onHostDestroy()
+        println("***2"+view)
         super.onDropViewInstance(view)
     }
 }

@@ -72,7 +72,7 @@ class LiveLikeWidgetTimelineLandscapeView(
             val theme = String(buffer)
             val result =
                 LiveLikeEngagementTheme.instanceFrom(JsonParser.parseString(theme).asJsonObject)
-            if (result is Result.Success) {
+            if (result is com.livelike.utils.Result.Success) {
                 widgetView?.applyTheme(result.data)
             } else {
                 Toast.makeText(

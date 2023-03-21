@@ -20,10 +20,10 @@ import com.livelike.engagementsdk.core.services.messaging.proxies.LiveLikeWidget
 import com.livelike.engagementsdk.core.services.messaging.proxies.WidgetLifeCycleEventsListener
 import com.livelike.engagementsdk.widget.view.WidgetView
 import com.livelike.engagementsdk.widget.viewModel.WidgetStates
-import com.livelike.utils.Result
 import com.reactnativewrapperexample_1.R
 import java.io.IOException
 import java.io.InputStream
+import com.livelike.utils.Result
 
 class LiveLikeWidgetView(
     val context: ThemedReactContext,
