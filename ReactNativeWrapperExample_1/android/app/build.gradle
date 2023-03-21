@@ -264,7 +264,7 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.2.0'
 
     implementation 'com.livelike:android-engagement-sdk:2.60'
-
+    implementation 'com.airbnb.android:lottie:3.5.0'
     implementation 'com.google.code.gson:gson:2.8.6'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"

@@ -2,4 +2,5 @@
 <resources>
     <color name="livelike_sponsor_label_text_color">#DEDEDE</color>
     <color name="livelike_sponsor_container_background">#1D1D1D</color>
+    <color name="livelike_cheermeter_score_color">#FFFFFF</color>
 </resources>

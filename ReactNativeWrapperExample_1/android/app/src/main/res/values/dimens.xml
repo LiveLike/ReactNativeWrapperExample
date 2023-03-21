@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="livelike_sponsor_label_text_size">10sp</dimen>
+    <dimen name="livelike_cheer_meter_imageview_winner_team_height">125dp</dimen>
+    <dimen name="livelike_cheer_meter_imageview_winner_team_width">125dp</dimen>
+    <dimen name="livelike_cheer_meter_text_padding">3dp</dimen>
+    <dimen name="livelike_cheer_meter_score_text_size">25sp</dimen>
 </resources>
