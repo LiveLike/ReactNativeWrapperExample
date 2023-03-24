@@ -179,7 +179,7 @@
                 ],
                 "fontSize": 12,
                 "borderWidth": 0,
-                "fontWeight": "normal",
+                "fontWeight": "bold",
                 "margin": [
                     0,
                     0,
@@ -211,7 +211,7 @@
                 ],
                 "fontSize": 12,
                 "borderWidth": 0,
-                "fontWeight": "normal",
+                "fontWeight": "bold",
                 "margin": [
                     0,
                     0,
@@ -436,7 +436,7 @@
                 ],
                 "fontSize": 12,
                 "borderWidth": 0,
-                "fontWeight": "normal",
+                "fontWeight": "bold",
                 "margin": [
                     0,
                     0,
@@ -468,7 +468,7 @@
                 ],
                 "fontSize": 12,
                 "borderWidth": 0,
-                "fontWeight": "normal",
+                "fontWeight": "bold",
                 "margin": [
                     0,
                     0,
@@ -839,7 +839,7 @@
                 ],
                 "fontSize": 12,
                 "borderWidth": 0,
-                "fontWeight": "normal",
+                "fontWeight": "bold",
                 "margin": [
                     0,
                     0,
@@ -1131,7 +1131,7 @@
                 ],
                 "fontSize": 12,
                 "borderWidth": 0,
-                "fontWeight": "normal",
+                "fontWeight": "bold",
                 "margin": [
                     0,
                     0,
@@ -1479,7 +1479,7 @@
                 ],
                 "fontSize": 12,
                 "borderWidth": 0,
-                "fontWeight": "normal",
+                "fontWeight": "bold",
                 "margin": [
                     0,
                     0,
@@ -2099,7 +2099,7 @@
                 ],
                 "fontSize": 12,
                 "borderWidth": 0,
-                "fontWeight": "normal",
+                "fontWeight": "bold",
                 "margin": [
                     0,
                     0,
@@ -2185,7 +2185,503 @@
                     "format": "uniformGradient"
                 }
             }
-        }
+        },
+        "cheerMeter": {
+                    "submitButtonDisabled": {
+
+                        "borderRadius": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "padding": [
+                            0,
+                            16,
+                            0,
+                            0
+                        ],
+                        "fontWeight": "bold",
+                        "fontSize": 14,
+                        "borderWidth": 0,
+                        "fontColor": "EC2027",
+                        "margin": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "submitButtonEnabled": {
+                        "borderColor": "B7A9D7",
+                        "fontFamily": [
+                            "sans-serif"
+                        ],
+                        "borderRadius": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "padding": [
+                            0,
+                            16,
+                            0,
+                            0
+                        ],
+                        "fontWeight": "bold",
+                        "fontSize": 14,
+                        "borderWidth": 0,
+                        "fontColor": "EC2027",
+                        "margin": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "confirmation": {
+
+                        "borderRadius": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "padding": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "fontWeight": "normal",
+                        "fontSize": 12,
+                        "borderWidth": 0,
+                        "fontColor": "58B5FF",
+                        "margin": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "root": {
+                        "borderRadius": [
+                            5,
+                            5,
+                            5,
+                            5
+                        ],
+                        "padding": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+
+                        "fontSize": 16,
+                        "borderWidth": 0,
+                        "fontWeight": "normal",
+                        "margin": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "borderColor": "DEDEDE38",
+                        "fontColor": "FFFFFF",
+                        "background": {
+                            "color": "1D1D1D",
+                            "format": "fill"
+                        }
+                    },
+                    "body":{
+                        "borderRadius": [
+                            0,
+                            0,
+                            5,
+                            5
+                        ],
+                        "padding": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+
+                        "fontSize": 16,
+                        "borderWidth": 0,
+                        "fontWeight": "normal",
+                        "margin": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "borderColor": "DEDEDE38",
+                        "fontColor": "FFFFFF",
+                        "background": {
+                            "color": "1D1D1D",
+                            "format": "fill"
+                        }
+                    },
+                    "footer": {
+                        "borderRadius": [
+                            5,
+                            5,
+                            5,
+                            5
+                        ],
+                        "padding": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+
+                        "fontSize": 16,
+                        "borderWidth": 0,
+                        "fontWeight": "normal",
+                        "margin": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "borderColor": "DEDEDE38",
+                        "fontColor": "FFFFFF",
+                        "background": {
+                            "color": "1D1D1D",
+                            "format": "fill"
+                        }
+                    },
+                    "timer": {
+                        "borderRadius": [
+                            5,
+                            5,
+                            5,
+                            5
+                        ],
+                        "padding": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+
+                        "fontSize": 16,
+                        "borderWidth": 0,
+                        "fontWeight": "normal",
+                        "margin": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "borderColor": "DEDEDE38",
+                        "fontColor": "FFFFFF",
+                        "background": {
+                            "color": "1D1D1D",
+                            "format": "fill"
+                        }
+                    },
+                    "dismiss": {
+                        "borderRadius": [
+                            5,
+                            5,
+                            5,
+                            5
+                        ],
+                        "padding": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+
+                        "fontSize": 16,
+                        "borderWidth": 0,
+                        "fontWeight": "normal",
+                        "margin": [
+                            0,
+                            -8,
+                            0,
+                            0
+                        ],
+                        "borderColor": "DEDEDE38",
+                        "fontColor": "FFFFFF",
+                        "background": {
+                            "color": "1D1D1D",
+                            "format": "fill"
+                        }
+                    },
+                    "title": {
+                        "borderRadius": [
+                            5,
+                            5,
+                            5,
+                            5
+                        ],
+                        "padding": [
+                            32,
+                            32,
+                            32,
+                            32
+                        ],
+
+                        "fontSize": 12,
+                        "borderWidth": 0,
+                        "fontWeight": "bold",
+                        "margin": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "borderColor": "DEDEDE38",
+                        "fontColor": "FFFFFF",
+                        "background": {
+                            "color": "920005",
+                            "format": "fill"
+                        }
+                    },
+                    "header": {
+                        "borderRadius": [
+                            5,
+                            5,
+                            0,
+                            0
+                        ],
+                        "padding": [
+                            26,
+                            26,
+                            32,
+                            26
+                        ],
+
+                        "fontSize": 12,
+                        "borderWidth": 0,
+                        "fontWeight": "bold",
+                        "margin": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "borderColor": "DEDEDE38",
+                        "fontColor": "FFFFFF",
+                        "background": {
+                            "colors": [
+                                "930000",
+                                "FF474D"
+                            ],
+                            "direction": 90,
+                            "format": "uniformGradient"
+                        }
+                    },
+                    "sideBBar": {
+                        "borderRadius": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "padding": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "fontSize": 16,
+                        "borderWidth": 0,
+                        "fontWeight": "bold",
+                        "margin": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "borderColor": "00000000",
+                        "fontColor": "ffffff",
+                        "background": {
+                            "colors": [
+                                "951E2E",
+                                "DF5461"
+                            ],
+                            "direction": 90,
+                            "format": "uniformGradient"
+                        }
+                    },
+                    "sideABar": {
+                        "borderRadius": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "padding": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "fontSize": 16,
+                        "borderWidth": 0,
+                        "fontWeight": "bold",
+                        "margin": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "borderColor": "00000000",
+                        "fontColor": "ffffff",
+                        "background": {
+                            "colors": [
+                                "5E98EE",
+                                "2734AE"
+                            ],
+                            "direction": 90,
+                            "format": "uniformGradient"
+                        }
+                    },
+                    "sideAButton": {
+                        "borderRadius": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "padding": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "fontFamily": [
+                            "sans-serif"
+                        ],
+                        "fontSize": 16,
+                        "borderWidth": 0,
+                        "fontWeight": "normal",
+                        "margin": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "borderColor": "00000000",
+                        "fontColor": "000000",
+                        "background": {
+                            "colors": [
+                                "2734AE",
+                                "5E98EE"
+                            ],
+                            "direction": 90,
+                            "format": "uniformGradient"
+                        }
+                    },
+                    "sideBButton": {
+                        "borderRadius": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "padding": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "fontFamily": [
+                            "sans-serif"
+                        ],
+                        "fontSize": 16,
+                        "borderWidth": 0,
+                        "fontWeight": "normal",
+                        "margin": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "borderColor": "00000000",
+                        "fontColor": "000000",
+                        "background": {
+                            "colors": [
+                                "DF5461",
+                                "951E2E"
+                            ],
+                            "direction": 90,
+                            "format": "uniformGradient"
+                        }
+                    },
+                    "selectedOption": {
+                        "borderRadius": [
+                            5,
+                            5,
+                            5,
+                            5
+                        ],
+                        "padding": [
+                            16,
+                            16,
+                            16,
+                            16
+                        ],
+                        
+                        "fontSize": 16,
+                        "borderWidth": 2,
+                        "fontWeight": "normal",
+                        "margin": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "borderColor": "ffb400",
+                        "fontColor": "FFFFFF",
+                        "background": {
+                            "color": "1D1D1D",
+                            "format": "fill"
+                        }
+                    },
+                    "selectedOptionBar": {
+                        "borderRadius": [
+                            5,
+                            5,
+                            5,
+                            5
+                        ],
+                        "padding": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        
+                        "fontSize": 16,
+                        "borderWidth": 0,
+                        "fontWeight": "normal",
+                        "margin": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "borderColor": "c96dd7",
+                        "fontColor": "FFFFFF",
+                        "background": {
+                            "colors": [
+                                "67B32D",
+                                "67B32D"
+                            ],
+                            "direction": 90,
+                            "format": "uniformGradient"
+                        }
+                    }
+                }
     },
     "version": 1
 }
